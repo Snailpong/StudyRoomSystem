@@ -8,5 +8,7 @@ public class main {
 
         System.out.println("Hello, world!");
         
+        System.out.println("bye bye wolrd!");
+        
     }
 }

@@ -3,7 +3,7 @@ package com.example.studyroomsystem;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 //commit 1
-//branch Minha
+//branch Minha2
 public class LoginActivity extends AppCompatActivity {
 
     @Override

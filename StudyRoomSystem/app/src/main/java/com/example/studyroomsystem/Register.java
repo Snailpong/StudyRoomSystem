@@ -78,7 +78,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                 Toast.makeText(Register.this, "이메일을 입력해 주세요.", Toast.LENGTH_SHORT).show();
             }
             else if(email.substring(email.indexOf("@")).equals("@pusan.ac.kr")) {
-                sender = new GMailSender("wlswo3149", "tmonnqijbemqzabf"); // SUBSTITUTE ID PASSWORD
+                sender = new GMailSender("softmaker005", "tndjqdyd1!"); // SUBSTITUTE ID PASSWORD
                 timeThread(auth_string);
 
                 Intent in = new Intent(Register.this, EmailLink.class);
@@ -107,7 +107,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                         sender.sendMail("PNUM 어플리케이션 인증 이메일입니다.", // subject.getText().toString(),
                                 "인증번호 : " + auth_string + "\n" +
                                         "인증번호를 PNUM 어플리케이션에 입력하여 인증을 완료해주세요.", // body.getText().toString(),
-                                "wlswo3149@gmail.com", // from.getText().toString(),
+                                "softmaker005@gmail.com", // from.getText().toString(),
                                 et.getText().toString() // to.getText().toString()
                         );
                         sleep(3000);

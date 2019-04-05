@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="firebase_database_url" translatable="false">https://studyroomsystem-9b5b7.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">586030606891</string>
+    <string name="google_api_key" translatable="false">AIzaSyA7OJZ7znKCMO6V-ik5iL0TSe5ILqsAdUs</string>
+    <string name="google_app_id" translatable="false">1:586030606891:android:b5842ac1a7d0d437</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA7OJZ7znKCMO6V-ik5iL0TSe5ILqsAdUs</string>
+    <string name="google_storage_bucket" translatable="false">studyroomsystem-9b5b7.appspot.com</string>
+    <string name="project_id" translatable="false">studyroomsystem-9b5b7</string>
+</resources>

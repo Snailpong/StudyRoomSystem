@@ -88,7 +88,7 @@ public class EmailLink extends AppCompatActivity {
                 }
 
                 auth_string = temp.toString();
-                sender = new GMailSender("softmaker005", "tndjqdyd1!"); // SUBSTITUTE ID PASSWORD
+                sender = new GMailSender("studyroomsystem", "3jojjang!"); // SUBSTITUTE ID PASSWORD
                 timeThread(auth_string, auth_email);
                 btnreRegister.setEnabled(true);
                 }
@@ -121,7 +121,7 @@ public class EmailLink extends AppCompatActivity {
                     sender.sendMail("PNUM 어플리케이션 인증 이메일입니다.", // subject.getText().toString(),
                             "인증번호 : " + auth_string + "\n" +
                                     "인증번호를 PNUM 어플리케이션에서 입력하여 인증을 완료해주세요.", // body.getText().toString(),
-                            "softmaker005@gmail.com", // from.getText().toString(),
+                            "studyroomsystem@gmail.com", // from.getText().toString(),
                             auth_email// to.getText().toString()
                     );
                     sleep(3000);

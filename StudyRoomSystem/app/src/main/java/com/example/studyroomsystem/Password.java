@@ -22,6 +22,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Hashtable;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Password extends AppCompatActivity {
 
@@ -37,6 +39,21 @@ public class Password extends AppCompatActivity {
     String stschoolnumber;
     String stname;
 
+    public boolean checkPassword(String str) {
+        String regExp_symbol = "([0-9].*[!,@,#,^,&,*,(,)])|([!,@,#,^,&,*,(,)].*[0-9])";
+        String regExp_alpha = "([a-zA-Z])";
+
+        Pattern pattern_symbol = Pattern.compile(regExp_symbol);
+        Pattern pattern_alpha = Pattern.compile(regExp_alpha);
+
+        Matcher matcher_symbol = pattern_symbol.matcher(str);
+        Matcher matcher_alpha = pattern_alpha.matcher(str);
+
+        if (matcher_alpha.find() && matcher_symbol.find() && str.length() >= 4) {
+            return true;
+        }
+        else return false;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +85,9 @@ public class Password extends AppCompatActivity {
                 else if(etrePassword.getText().toString().isEmpty()||etrePassword.getText().toString().equals("")||etPassword.getText().toString().isEmpty()||etPassword.getText().toString().equals("")){
                     Toast.makeText(Password.this, "비밀번호를 입력해 주세요.", Toast.LENGTH_SHORT).show();
                 }
+                else if (!checkPassword(etPassword.getText().toString())) {
+                    Toast.makeText(Password.this, "비밀번호는 숫자, 특수문자, 영문자를 포함하여 4자리 이상이어야 합니다.", Toast.LENGTH_SHORT).show();
+                }
                 else if (etPassword.getText().toString().equals(etrePassword.getText().toString())) {
                         stEmail = auth_email;
                         stschoolnumber = etschoolnumber.getText().toString();
@@ -76,9 +96,9 @@ public class Password extends AppCompatActivity {
                         strePassword = etrePassword.getText().toString();
                         registerUser(stEmail, stPassword, stschoolnumber, stname);
 
-                    } else {
+                } else {
                         Toast.makeText(Password.this, "비밀번호를 다시 확인해 주세요.", Toast.LENGTH_SHORT).show();
-                    }
+                }
                 }
         });
     }

@@ -1,4 +1,0 @@
-#Fri Apr 05 16:07:06 KST 2019
-base.0=D\:\\workspace\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\9
-path.0=classes.dex
-renamed.0=classes.dex

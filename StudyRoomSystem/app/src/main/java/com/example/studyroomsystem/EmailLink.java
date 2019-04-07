@@ -44,7 +44,7 @@ public class EmailLink extends AppCompatActivity {
                     Toast.makeText(EmailLink.this, "인증문자를 입력해 주세요.", Toast.LENGTH_SHORT).show();
                 }
                 else {
-
+//sender 변경해야함
                     if(et.getText().toString().equals(auth_string)){
                         Toast.makeText(EmailLink.this, "인증이 완료되었습니다.", Toast.LENGTH_SHORT).show();
                         et.setText("");

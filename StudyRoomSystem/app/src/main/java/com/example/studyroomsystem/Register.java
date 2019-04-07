@@ -70,6 +70,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                 }
             }
 
+            /* dfasdfsdaf sd*/
             String auth_string = temp.toString();
             // TODO Auto-generated method stub
             et = (EditText) this.findViewById(R.id.etschoolnumber);

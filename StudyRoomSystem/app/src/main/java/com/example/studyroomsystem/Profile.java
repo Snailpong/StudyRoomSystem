@@ -27,7 +27,7 @@ public class Profile extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     String TAG = "ProfileActivity";
-    ProgressBar pbLogin;
+    ProgressBar pbRegister;
     DatabaseReference myRef;
     long lastPressed;
 
@@ -62,7 +62,7 @@ public class Profile extends AppCompatActivity {
         final String auth_email = in.getStringExtra("auth_email");
 
 
-        pbLogin = (ProgressBar)findViewById(R.id.pbLogin);
+        pbRegister = (ProgressBar)findViewById(R.id.pbRegister);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("users");
 
@@ -103,13 +103,13 @@ public class Profile extends AppCompatActivity {
 
 
     public void registerUser(String email, String password, final String stschoolnumber, final String stname){
-        pbLogin.setVisibility(View.VISIBLE);
+        pbRegister.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
-                        pbLogin.setVisibility(View.GONE);
+                        pbRegister.setVisibility(View.GONE);
                         if(!task.isSuccessful()){
                             Log.d(TAG,"Sign Up Failed");
                             Toast.makeText(Profile.this, "회원가입이 실패했습니다.",

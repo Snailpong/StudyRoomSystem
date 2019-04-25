@@ -71,12 +71,12 @@ public final class R {
         public static final int light = 0x7f09005b;
         public static final int none = 0x7f090065;
         public static final int normal = 0x7f090066;
-        public static final int radio = 0x7f090072;
-        public static final int standard = 0x7f090091;
-        public static final int text = 0x7f090099;
-        public static final int text2 = 0x7f09009a;
-        public static final int wide = 0x7f0900b1;
-        public static final int wrap_content = 0x7f0900b4;
+        public static final int radio = 0x7f090073;
+        public static final int standard = 0x7f090093;
+        public static final int text = 0x7f09009b;
+        public static final int text2 = 0x7f09009c;
+        public static final int wide = 0x7f0900b6;
+        public static final int wrap_content = 0x7f0900b9;
     }
     public static final class integer {
         private integer() {}

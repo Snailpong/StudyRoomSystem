@@ -42,7 +42,7 @@
         <EditText
             android:layout_width="310dp"
             android:layout_height="50dp"
-            android:hint="  패스워드"
+            android:hint="  패스워드  "
             android:id="@+id/pwdTxt"
             android:inputType="textPassword"
             android:background="@drawable/ettext_bubble"
@@ -84,7 +84,7 @@
             android:layout_width="310dp"
             android:layout_height="40dp"
             android:textSize="17dp"
-            android:id="@+id/findPwdButton"
+            android:id="@+id/resetPwdButton"
             android:textColor="#ffffff"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="7dp"

@@ -71,11 +71,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
-        Button btnFindPwd = (Button)findViewById(R.id.findPwdButton);
+        Button btnFindPwd = (Button)findViewById(R.id.resetPwdButton);
         btnFindPwd.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent in = new Intent(LoginActivity.this, Register.class);
+                Intent in = new Intent(LoginActivity.this, ResetPWD.class);
                 startActivity(in);
             }
         });

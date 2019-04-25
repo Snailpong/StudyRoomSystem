@@ -154,6 +154,8 @@
     <orderEntry type="library" scope="TEST" name="Gradle: net.sf.kxml:kxml2:2.3.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-database-license:11.8.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.mail:android-mail:1.5.5@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.jakewharton:butterknife:8.5.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.jakewharton:butterknife-annotations:8.5.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:documentfile:28.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:slidingpanelayout:28.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-auth-license:11.8.0@aar" level="project" />

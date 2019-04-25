@@ -765,6 +765,7 @@ id direct
 id disableHome
 id edit_query
 id end
+id etEmail
 id etauth_number
 id etregist_name
 id etregist_password
@@ -776,7 +777,6 @@ id expanded_menu
 id fill
 id fill_horizontal
 id fill_vertical
-id findPwdButton
 id forever
 id gone
 id group_divider
@@ -812,12 +812,14 @@ id packed
 id parent
 id parentPanel
 id pbLogin
+id pbRegister
 id percent
 id progress_circular
 id progress_horizontal
 id pwdTxt
 id radio
 id registerButton
+id resetPwdButton
 id right
 id right_icon
 id right_side
@@ -865,7 +867,10 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
+id tvAlert
+id tvEmail
 id tvHello
+id tvRegister
 id tvalert
 id tvauth_number
 id tvemail_alert
@@ -918,11 +923,11 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_email_link
-layout activity_find_pwd
 layout activity_login
 layout activity_main
 layout activity_profile
 layout activity_register
+layout activity_reset_pwd
 layout activity_temp
 layout notification_action
 layout notification_action_tombstone

@@ -776,6 +776,7 @@ id expanded_menu
 id fill
 id fill_horizontal
 id fill_vertical
+id findPwdButton
 id forever
 id gone
 id group_divider
@@ -816,7 +817,7 @@ id progress_circular
 id progress_horizontal
 id pwdTxt
 id radio
-id registerTxt
+id registerButton
 id right
 id right_icon
 id right_side
@@ -917,9 +918,10 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_email_link
+layout activity_find_pwd
 layout activity_login
 layout activity_main
-layout activity_password
+layout activity_profile
 layout activity_register
 layout activity_temp
 layout notification_action

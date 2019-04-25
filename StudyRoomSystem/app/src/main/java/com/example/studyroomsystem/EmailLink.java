@@ -2,7 +2,6 @@ package com.example.studyroomsystem;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -48,7 +47,7 @@ public class EmailLink extends AppCompatActivity {
                     if(et.getText().toString().equals(auth_string)){
                         Toast.makeText(EmailLink.this, "인증이 완료되었습니다.", Toast.LENGTH_SHORT).show();
                         et.setText("");
-                        Intent in = new Intent(EmailLink.this, Password.class);
+                        Intent in = new Intent(EmailLink.this, Profile.class);
                         in.putExtra("auth_email", auth_email);
                         startActivity(in);
                     } else{

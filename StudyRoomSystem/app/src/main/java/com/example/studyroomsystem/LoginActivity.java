@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 //commit 1
 //branch Minha2
 public class LoginActivity extends AppCompatActivity {
-    String TAG = "MainActivity";
+    String TAG = "LoginActivity";
     EditText etEmail;
     EditText etPassword;
     ProgressBar pbLogin;
@@ -71,8 +71,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
-        Button btnRegister = (Button)findViewById(R.id.registerTxt);
+        Button btnFindPwd = (Button)findViewById(R.id.resetPwdButton);
+        btnFindPwd.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent in = new Intent(LoginActivity.this, ResetPWD.class);
+                startActivity(in);
+            }
+        });
 
+        Button btnRegister = (Button)findViewById(R.id.registerButton);
         btnRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

@@ -33,8 +33,9 @@
         <activity android:name="com.example.studyroomsystem.RegisterActivity" />
         <activity android:name="com.example.studyroomsystem.LoginActivity" />
         <activity android:name="com.example.studyroomsystem.Register" />
+        <activity android:name="com.example.studyroomsystem.ResetPWD" />
         <activity android:name="com.example.studyroomsystem.EmailLink" />
-        <activity android:name="com.example.studyroomsystem.Password" />
+        <activity android:name="com.example.studyroomsystem.Profile" />
         <activity android:name="com.example.studyroomsystem.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

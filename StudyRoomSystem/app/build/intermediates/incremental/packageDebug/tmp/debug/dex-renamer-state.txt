@@ -1,4 +1,4 @@
-#Sun Apr 07 11:05:39 KST 2019
-base.0=D\:\\aa\\StudyRoomSystem\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+#Thu Apr 25 11:03:39 KST 2019
+base.0=C\:\\Users\\OSe\\AndroidStudioProjects\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 path.0=classes.dex
 renamed.0=classes.dex

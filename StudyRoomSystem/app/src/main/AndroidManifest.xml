@@ -12,8 +12,9 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Register" />
+        <activity android:name=".ResetPWD" />
         <activity android:name=".EmailLink" />
-        <activity android:name=".Password" />
+        <activity android:name=".Profile" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

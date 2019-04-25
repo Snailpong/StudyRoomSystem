@@ -61,7 +61,6 @@ public class Profile extends AppCompatActivity {
         Intent in = getIntent();
         final String auth_email = in.getStringExtra("auth_email");
 
-
         pbRegister = (ProgressBar)findViewById(R.id.pbRegister);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("users");
@@ -93,14 +92,12 @@ public class Profile extends AppCompatActivity {
                         stPassword = etPassword.getText().toString();
                         strePassword = etrePassword.getText().toString();
                         registerUser(stEmail, stPassword, stschoolnumber, stname);
-
                 } else {
                         Toast.makeText(Profile.this, "비밀번호를 다시 확인해 주세요.", Toast.LENGTH_SHORT).show();
                 }
                 }
         });
     }
-
 
     public void registerUser(String email, String password, final String stschoolnumber, final String stname){
         pbRegister.setVisibility(View.VISIBLE);

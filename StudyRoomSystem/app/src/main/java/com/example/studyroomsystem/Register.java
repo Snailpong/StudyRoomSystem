@@ -1,38 +1,25 @@
 package com.example.studyroomsystem;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.pm.PackageInstaller;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.PasswordAuthentication;
-import java.util.Properties;
 import java.util.Random;
 
 import javax.sql.DataSource;
 
 public class Register extends AppCompatActivity implements View.OnClickListener{
-    Intent in = getIntent();
 
     ProgressDialog dialog;
     EditText et;
     GMailSender sender;
     long lastPressed;
-
 
     /** Called when the activity is first created. */
     @Override
@@ -41,7 +28,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_register);
         Button bt = (Button) this.findViewById(R.id.btnSendEmail);
         bt.setOnClickListener(this);
-
     }
 
     @Override
@@ -99,7 +85,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
             public void run() {
                 // TODO Auto-generated method stub
                 try {
-
                     sender.sendMail("Study Room System 어플리케이션 인증 이메일입니다.", // subject.getText().toString(),
                             "인증번호 : " + auth_string + "\n" +
                                     "인증번호를 Study Room System 어플리케이션에 입력하여 인증을 완료해주세요.", // body.getText().toString(),
@@ -107,8 +92,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                             et.getText().toString() // to.getText().toString()
                     );
                     sleep(3000);
-
-
                 } catch (Exception e) {
                     Log.e("SendMail", e.getMessage(), e);
                     Toast.makeText(Register.this, "전송 실패", Toast.LENGTH_LONG).show();
@@ -119,7 +102,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
             private void sleep(int i) {
                 // TODO Auto-generated method stub
             }
-
         }).start();
 
     }

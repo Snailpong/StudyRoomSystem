@@ -45,7 +45,6 @@
             android:textSize="12sp"
             android:layout_centerHorizontal="true"
             />
-
         <EditText
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -59,7 +58,6 @@
             android:background="@drawable/real_ettext_bubble"
             android:paddingLeft="10dp"
             />
-
         <TextView
             android:layout_width="288dp"
             android:layout_height="wrap_content"
@@ -71,7 +69,6 @@
             android:textSize="12sp"
             android:layout_below="@+id/etEmail"
             />
-
         <Button
             android:text = "인증 메일 전송"
             android:layout_width="300dp"

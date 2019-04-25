@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-import static java.lang.Thread.sleep;
 
 public class EmailLink extends AppCompatActivity {
 
@@ -33,7 +32,6 @@ public class EmailLink extends AppCompatActivity {
         auth_string = in.getStringExtra("auth_string");
         auth_email = in.getStringExtra("auth_email");
 
-
         Button btnRegister = (Button)findViewById(R.id.btncheck_auth);
         btnRegister.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
@@ -43,7 +41,6 @@ public class EmailLink extends AppCompatActivity {
                     Toast.makeText(EmailLink.this, "인증문자를 입력해 주세요.", Toast.LENGTH_SHORT).show();
                 }
                 else {
-//sender 변경해야함
                     if(et.getText().toString().equals(auth_string)){
                         Toast.makeText(EmailLink.this, "인증이 완료되었습니다.", Toast.LENGTH_SHORT).show();
                         et.setText("");
@@ -54,9 +51,6 @@ public class EmailLink extends AppCompatActivity {
                         Toast.makeText(EmailLink.this, "인증 문자가 잘못되었습니다. 다시 확인해 주세요.", Toast.LENGTH_LONG).show();
                     }
                 }
-
-
-
             }
         });
 
@@ -116,7 +110,6 @@ public class EmailLink extends AppCompatActivity {
             public void run() {
                 // TODO Auto-generated method stub
                 try {
-
                     sender.sendMail("Study Room System 어플리케이션 인증 이메일입니다.", // subject.getText().toString(),
                             "인증번호 : " + auth_string + "\n" +
                                     "인증번호를 Study Room System 어플리케이션에서 입력하여 인증을 완료해주세요.", // body.getText().toString(),

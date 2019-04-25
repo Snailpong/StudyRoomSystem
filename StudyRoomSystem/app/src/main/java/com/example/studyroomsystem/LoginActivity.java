@@ -22,9 +22,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-//commit 1
-//branch Minha2
+
+
 public class LoginActivity extends AppCompatActivity {
+
     String TAG = "LoginActivity";
     EditText etEmail;
     EditText etPassword;
@@ -117,8 +118,6 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-
-
     private void userLogin(final String email,final String password){
         Log.d(TAG, email + password);
         pbLogin.setVisibility(View.VISIBLE);
@@ -159,7 +158,6 @@ public class LoginActivity extends AppCompatActivity {
                                     throw error.toException();
                                 }
                             });
-
 
                             Intent in = new Intent(LoginActivity.this, TempActivity.class);
                             startActivity(in);

@@ -19,6 +19,7 @@ import javax.mail.internet.MimeMessage;
 
 
 public class GMailSender extends javax.mail.Authenticator {
+
     private String mailhost = "smtp.gmail.com";
     private String user;
     private String password;

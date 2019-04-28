@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< Updated upstream
             "outputFile": "D:\\aa\\StudyRoomSystem\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sl\\values-sl.xml",
+=======
+            "outputFile": "D:\\renew\\StudyRoomSystem\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sl\\values-sl.xml",
+>>>>>>> Stashed changes
             "map": [
                 {
                     "source": "C:\\Users\\min\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\a16ac0499635da061f80f720ce84e32f\\res\\values-sl\\values.xml",

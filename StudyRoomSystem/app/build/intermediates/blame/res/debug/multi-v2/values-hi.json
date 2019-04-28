@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< Updated upstream
             "outputFile": "D:\\aa\\StudyRoomSystem\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hi\\values-hi.xml",
+=======
+            "outputFile": "D:\\renew\\StudyRoomSystem\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hi\\values-hi.xml",
+>>>>>>> Stashed changes
             "map": [
                 {
                     "source": "C:\\Users\\min\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4687f715b001df1069152711140ea9a0\\res\\values-hi\\values-hi.xml",

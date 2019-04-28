@@ -1,7 +1,13 @@
 #Internal package file, do not edit.
+<<<<<<< Updated upstream
 #Sun Apr 07 11:05:39 KST 2019
 0.baseType=DIRECTORY
 0.base=D\:\\aa\\StudyRoomSystem\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+=======
+#Sat Apr 27 12:10:15 KST 2019
+0.baseType=DIRECTORY
+0.base=D\:\\renew\\StudyRoomSystem\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+>>>>>>> Stashed changes
 0.path=classes.dex
 0.set=DEX
 count=1

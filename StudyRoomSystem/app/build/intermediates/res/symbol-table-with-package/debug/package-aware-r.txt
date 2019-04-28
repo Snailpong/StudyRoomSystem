@@ -739,6 +739,8 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnModify
+id btnPersonal_info
 id btnSendEmail
 id btncheck_auth
 id btnfinalregister
@@ -861,6 +863,8 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textViewUserName
+id textViewUserSchoolid
 id time
 id title
 id titleDividerNoCustom
@@ -925,6 +929,7 @@ layout abc_tooltip
 layout activity_email_link
 layout activity_login
 layout activity_main
+layout activity_personal_info
 layout activity_profile
 layout activity_register
 layout activity_reset_pwd

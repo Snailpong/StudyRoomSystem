@@ -17,7 +17,6 @@ public class ResetPWD extends AppCompatActivity {
 
     EditText etMail;
     Button btnSendMail;
-    long lastPressed;
 
     FirebaseAuth firebaseAuth;
 
@@ -51,16 +50,5 @@ public class ResetPWD extends AppCompatActivity {
                 });
             }
         });
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (System.currentTimeMillis() - lastPressed < 1500) {
-            moveTaskToBack(true);
-            finish();
-            android.os.Process.killProcess(android.os.Process.myPid());
-        }
-        Toast.makeText(this, "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
-        lastPressed = System.currentTimeMillis();
     }
 }

@@ -40,6 +40,7 @@ public class ResetPWD extends AppCompatActivity {
                         if(task.isSuccessful()) {
                             Toast.makeText(ResetPWD.this,
                                     "비밀번호 재설정 메일이 전송 되었습니다.", Toast.LENGTH_LONG).show();
+                            ResetPWD.this.finish();
                         }
                         else { // 등록된 이메일이 아닌 경우
                             Toast.makeText(ResetPWD.this,

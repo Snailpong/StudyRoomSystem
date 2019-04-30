@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText etEmail;
     EditText etPassword;
     ProgressBar pbLogin;
-    String stEmail;
+    String stEmail = "";
     String stPassword;
     long lastPressed;
     FirebaseDatabase database;
@@ -100,9 +100,15 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "회원정보를 입력해 주세요.", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    userLogin(stEmail, stPassword);
+                    userLogin(stEmail, stPassword, false);
                 }   }
         });
+
+        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+        if(!pref.getString("id", "").equals("")) {
+            userLogin(pref.getString("id", ""), pref.getString("pw", ""), true);
+        }
+
     }
 
     @Override
@@ -118,7 +124,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void userLogin(final String email,final String password){
+    private void userLogin(final String email,final String password, final boolean isauto){
         Log.d(TAG, email + password);
         pbLogin.setVisibility(View.VISIBLE);
         mAuth.signInWithEmailAndPassword(email,password)
@@ -160,7 +166,16 @@ public class LoginActivity extends AppCompatActivity {
                             });
 
                             Intent in = new Intent(LoginActivity.this, TempActivity.class);
+                            if(!isauto) {
+                                SharedPreferences pref = getSharedPreferences( "pref" , MODE_PRIVATE);
+                                SharedPreferences.Editor ed = pref.edit();
+                                ed.putString( "id" , stEmail );
+                                ed.putString( "pw" , stPassword );
+                                ed.commit();
+                            }
+
                             startActivity(in);
+                            LoginActivity.this.finish();
 
                         } else {
                             // If sign in fails, display a message to the user.

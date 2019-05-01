@@ -17,7 +17,6 @@ public class ResetPWD extends AppCompatActivity {
 
     EditText etMail;
     Button btnSendMail;
-    long lastPressed;
 
     FirebaseAuth firebaseAuth;
 
@@ -41,6 +40,7 @@ public class ResetPWD extends AppCompatActivity {
                         if(task.isSuccessful()) {
                             Toast.makeText(ResetPWD.this,
                                     "비밀번호 재설정 메일이 전송 되었습니다.", Toast.LENGTH_LONG).show();
+                            ResetPWD.this.finish();
                         }
                         else { // 등록된 이메일이 아닌 경우
                             Toast.makeText(ResetPWD.this,
@@ -51,16 +51,5 @@ public class ResetPWD extends AppCompatActivity {
                 });
             }
         });
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (System.currentTimeMillis() - lastPressed < 1500) {
-            moveTaskToBack(true);
-            finish();
-            android.os.Process.killProcess(android.os.Process.myPid());
-        }
-        Toast.makeText(this, "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
-        lastPressed = System.currentTimeMillis();
     }
 }

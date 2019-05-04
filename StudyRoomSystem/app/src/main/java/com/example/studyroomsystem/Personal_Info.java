@@ -1,10 +1,13 @@
 package com.example.studyroomsystem;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -60,8 +63,15 @@ public class Personal_Info extends AppCompatActivity {
                 throw error.toException();
             }
         });
-
-
-
+        Button btnModify = (Button) findViewById(R.id.btnModify);
+        btnModify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Personal_Info.this, ModifyPI.class);
+                startActivity(in);
+            }
+        });
     }
+
+
 }

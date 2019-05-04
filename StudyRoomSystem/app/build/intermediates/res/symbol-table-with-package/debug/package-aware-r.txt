@@ -740,9 +740,11 @@ id beginning
 id blocking
 id bottom
 id btnModify
+id btnModifycancel
 id btnPersonal_info
 id btnSendEmail
 id btncheck_auth
+id btnfinalmodify
 id btnfinalregister
 id btnrecheck
 id buttonPanel
@@ -769,6 +771,10 @@ id edit_query
 id end
 id etEmail
 id etauth_number
+id etmodify_name
+id etmodify_password
+id etmodify_repassword
+id etmodify_schoolnum
 id etregist_name
 id etregist_password
 id etregist_repassword
@@ -879,6 +885,11 @@ id tvalert
 id tvauth_number
 id tvemail_alert
 id tvemail_link
+id tvmodifyPI
+id tvmodifyname
+id tvmodifypassword
+id tvmodifyrepassword
+id tvmodifyschoolnum
 id tvname
 id tvpassword
 id tvregister
@@ -929,6 +940,7 @@ layout abc_tooltip
 layout activity_email_link
 layout activity_login
 layout activity_main
+layout activity_modify_pi
 layout activity_personal_info
 layout activity_profile
 layout activity_register

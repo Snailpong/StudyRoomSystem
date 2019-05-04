@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +23,7 @@ public class ModifyPI extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify_pi);
         final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users").child(userId);
 
 
@@ -44,6 +46,9 @@ public class ModifyPI extends AppCompatActivity {
                         profile.put("schoolid",etModifySchoolnum.getText().toString());
                     }
                     mDatabase.updateChildren(profile);
+                    if (!etModifyPasswd.getText().toString().isEmpty()) {
+                        user.updatePassword(etModifyPasswd.getText().toString());
+                    }
                     finish();
                 }
                 else {

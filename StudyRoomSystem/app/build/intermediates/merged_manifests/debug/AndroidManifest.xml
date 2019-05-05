@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="21"
         android:targetSdkVersion="28" />
 
     <!-- Required permission for App measurement to run. -->
@@ -30,14 +30,15 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.studyroomsystem.ModifyPI" />
-        <activity android:name="com.example.studyroomsystem.Personal_Info" />
         <activity android:name="com.example.studyroomsystem.RegisterActivity" />
-        <activity android:name="com.example.studyroomsystem.LoginActivity" />
         <activity android:name="com.example.studyroomsystem.Register" />
-        <activity android:name="com.example.studyroomsystem.ResetPWD" />
-        <activity android:name="com.example.studyroomsystem.EmailLink" />
+        <activity android:name="com.example.studyroomsystem.PagerActivity" />
         <activity android:name="com.example.studyroomsystem.Profile" />
+        <activity android:name="com.example.studyroomsystem.Personal_Info" />
+        <activity android:name="com.example.studyroomsystem.EmailLink" />
+        <activity android:name="com.example.studyroomsystem.ResetPWD" />
+        <activity android:name="com.example.studyroomsystem.LoginActivity" />
+        <activity android:name="com.example.studyroomsystem.ModifyPI" />
         <activity android:name="com.example.studyroomsystem.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,7 +46,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.studyroomsystem.TempActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

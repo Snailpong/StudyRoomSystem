@@ -108,6 +108,10 @@
         "source": "C:\\Users\\Surface_Snailpong\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\9e4f61998adf83ca23e6681d6f9c893d\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_d.png.flat",
+        "source": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\src\\main\\res\\drawable-v24\\d.png"
+    },
+    {
         "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_text_round.png.flat",
         "source": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_text_round.png"
     },
@@ -254,6 +258,10 @@
     {
         "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Surface_Snailpong\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\9e4f61998adf83ca23e6681d6f9c893d\\res\\drawable-mdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_b.png.flat",
+        "source": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\src\\main\\res\\drawable-v24\\b.png"
     },
     {
         "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_design_tint_password_toggle.xml.flat",
@@ -1288,6 +1296,10 @@
         "source": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_human_round.png"
     },
     {
+        "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_c.png.flat",
+        "source": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\src\\main\\res\\drawable-v24\\c.png"
+    },
+    {
         "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_nophoto_round.png.flat",
         "source": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\src\\main\\res\\mipmap-xhdpi\\ic_nophoto_round.png"
     },
@@ -1418,6 +1430,10 @@
     {
         "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_error.png.flat",
         "source": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\src\\main\\res\\mipmap-mdpi\\ic_error.png"
+    },
+    {
+        "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_e.png.flat",
+        "source": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\src\\main\\res\\drawable-v24\\e.png"
     },
     {
         "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
@@ -1848,6 +1864,10 @@
         "source": "C:\\Users\\Surface_Snailpong\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\08367ea5923929d9072235181668a5f3\\res\\animator\\mtrl_btn_state_list_anim.xml"
     },
     {
+        "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_a.png.flat",
+        "source": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\src\\main\\res\\drawable-v24\\a.png"
+    },
+    {
         "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_background_transition_holo_light.xml.flat",
         "source": "C:\\Users\\Surface_Snailpong\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\9e4f61998adf83ca23e6681d6f9c893d\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
@@ -2062,6 +2082,10 @@
     {
         "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_cancel_action.xml.flat",
         "source": "C:\\Users\\Surface_Snailpong\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\038ec99f15d318578e5e209df2858ac0\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_cardview.xml.flat",
+        "source": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\src\\main\\res\\layout\\item_cardview.xml"
     },
     {
         "merged": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",

@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Personal_Info extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
-    private static final String TAG = "MainActivity";
+
     private TextView textViewUserName;
     private TextView textViewUserSchoolid;
     private DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("users");
@@ -75,26 +75,6 @@ public class Personal_Info extends AppCompatActivity {
             }
         });
 
-        Button btnGetOut = (Button) findViewById(R.id.btn_getout);
-        btnGetOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-                user.delete()
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-
-                                if (task.isSuccessful()) {
-                                    Log.d(TAG, "User account deleted.");
-                                }
-                            }
-                        });
-                Intent intent = new Intent(Personal_Info.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
 
     }
 

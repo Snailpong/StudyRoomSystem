@@ -165,7 +165,7 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             });
 
-                            Intent in = new Intent(LoginActivity.this, TempActivity.class);
+                            Intent in = new Intent(LoginActivity.this, PagerActivity.class);
                             if(!isauto) {
                                 SharedPreferences pref = getSharedPreferences( "pref" , MODE_PRIVATE);
                                 SharedPreferences.Editor ed = pref.edit();

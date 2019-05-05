@@ -5571,9 +5571,9 @@ public final class R {
     public static final int design_navigation_menu=0x7f0d0030;
     public static final int design_navigation_menu_item=0x7f0d0031;
     public static final int design_text_input_password_icon=0x7f0d0032;
-    public static final int fragment_profile=0x7f0d0033;
-    public static final int fragment_ratio=0x7f0d0034;
-    public static final int fragment_studyroom=0x7f0d0035;
+    public static final int fragment_building=0x7f0d0033;
+    public static final int fragment_profile=0x7f0d0034;
+    public static final int fragment_ratio=0x7f0d0035;
     public static final int mtrl_layout_snackbar=0x7f0d0036;
     public static final int mtrl_layout_snackbar_include=0x7f0d0037;
     public static final int notification_action=0x7f0d0038;

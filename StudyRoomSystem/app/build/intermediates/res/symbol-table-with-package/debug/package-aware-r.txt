@@ -1126,6 +1126,10 @@ id bottom
 id btnModify
 id btnModifycancel
 id btnSendEmail
+id btn_alarm_message
+id btn_getout
+id btn_logout
+id btn_user_reservation
 id btncheck_auth
 id btnfinalmodify
 id btnfinalregister

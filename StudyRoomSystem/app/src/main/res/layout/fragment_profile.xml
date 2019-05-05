@@ -1,86 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+      
+            <Button
+                android:text = "알림"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:textSize="15dp"
+                android:id="@+id/btn_alarm_message"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btn_user_reservation"
+                android:background="@drawable/button_bubble"
+                />
 
-    <RelativeLayout
-        android:layout_marginTop="80dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="30dp"
-        android:paddingBottom="50dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/layout_bubble"
-        android:layout_marginHorizontal="30dp"
-        >
+            <Button
+                android:text = "로그아웃"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:textSize="15dp"
+                android:id="@+id/btn_logout"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btn_alarm_message"
+                android:background="@drawable/button_bubble"
+                />
 
-        <Button
-            android:text = "내 예약"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:textSize="15dp"
-            android:id="@+id/btn_user_reservation"
-            android:textColor="#ffffff"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/textViewUserSchoolid"
-            android:background="@drawable/button_bubble"
-            />
+            <Button
+                android:text = "회원탈퇴"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:textSize="15dp"
+                android:id="@+id/btn_getout"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btn_logout"
+                android:background="@drawable/button_bubble"
+                />
+        </RelativeLayout>
+    </LinearLayout>
 
-        <Button
-            android:text = "개인정보"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:textSize="15dp"
-            android:id="@+id/btn_user_info"
-            android:textColor="#ffffff"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/btn_user_reservation"
-            android:background="@drawable/button_bubble"
-            />
 
-        <Button
-            android:text = "알림"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:textSize="15dp"
-            android:id="@+id/btn_alarm_message"
-            android:textColor="#ffffff"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/btn_user_info"
-            android:background="@drawable/button_bubble"
-            />
 
-        <Button
-            android:text = "로그아웃"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:textSize="15dp"
-            android:id="@+id/btn_logout"
-            android:textColor="#ffffff"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/btn_alarm_message"
-            android:background="@drawable/button_bubble"
-            />
-
-        <Button
-            android:text = "회원탈퇴"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:textSize="15dp"
-            android:id="@+id/btn_getout"
-            android:textColor="#ffffff"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/btn_logout"
-            android:background="@drawable/button_bubble"
-            />
-    </RelativeLayout>
-
-</LinearLayout>
+</ScrollView>

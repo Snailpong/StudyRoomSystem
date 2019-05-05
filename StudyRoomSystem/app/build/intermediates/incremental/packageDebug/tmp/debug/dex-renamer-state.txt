@@ -1,7 +1,7 @@
-#Sun May 05 14:49:28 KST 2019
-base.0=C\:\\Users\\OSe\\AndroidStudioProjects\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
+#Sun May 05 15:34:43 KST 2019
+base.0=C\:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\OSe\\AndroidStudioProjects\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
+base.1=C\:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out

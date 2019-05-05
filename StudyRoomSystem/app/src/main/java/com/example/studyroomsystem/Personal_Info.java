@@ -3,6 +3,7 @@ package com.example.studyroomsystem;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Personal_Info extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
-
+    private static final String TAG = "MainActivity";
     private TextView textViewUserName;
     private TextView textViewUserSchoolid;
     private DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("users");
@@ -71,7 +74,36 @@ public class Personal_Info extends AppCompatActivity {
                 startActivity(in);
             }
         });
+        Button btnDelete = (Button) findViewById(R.id.btnDelete);
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                user.delete()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+
+                                if (task.isSuccessful()) {
+                                    Log.d(TAG, "User account deleted.");
+                                }
+                            }
+                        });
+                Intent intent = new Intent(Personal_Info.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
     }
 
 
 }
+
+
+
+
+

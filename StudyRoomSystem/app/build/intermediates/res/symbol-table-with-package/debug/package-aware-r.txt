@@ -939,6 +939,7 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+drawable a
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -1025,7 +1026,9 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable b
 drawable button_bubble
+drawable c
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1045,6 +1048,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable d
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1052,6 +1056,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable down_ettext_bubble
+drawable e
 drawable ettext_bubble
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -1136,6 +1141,7 @@ id btnfinalregister
 id btnrecheck
 id buttonPanel
 id cancel_action
+id cardview
 id center
 id center_horizontal
 id center_vertical
@@ -1199,6 +1205,7 @@ id icon_only
 id idTxt
 id ifRoom
 id image
+id imageCard
 id info
 id invisible
 id italic
@@ -1241,6 +1248,7 @@ id progress_circular
 id progress_horizontal
 id pwdTxt
 id radio
+id recyclerView
 id registerButton
 id resetPwdButton
 id right
@@ -1296,6 +1304,7 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id text
 id text2
+id textCard
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -1422,6 +1431,7 @@ layout design_text_input_password_icon
 layout fragment_building
 layout fragment_profile
 layout fragment_ratio
+layout item_cardview
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action

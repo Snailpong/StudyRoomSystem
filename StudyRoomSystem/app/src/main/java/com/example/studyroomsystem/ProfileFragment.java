@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -27,7 +28,7 @@ import static android.content.Context.MODE_PRIVATE;
 // 서비스3 : 개인정보 확인, 수정, 회원가입 탈퇴
 public class ProfileFragment extends Fragment{
     private FirebaseAuth firebaseAuth;
-
+    private static final String TAG = "MainActivity";
     private TextView textViewUserName;
     private TextView textViewUserSchoolid;
     private DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("users");
@@ -91,6 +92,29 @@ public class ProfileFragment extends Fragment{
                 getActivity().finish();
             }
         });
+
+
+        Button btnGetOut = (Button) view.findViewById(R.id.btn_getout);
+        btnGetOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                user.delete()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+
+                                if (task.isSuccessful()) {
+                                    Log.d(TAG, "User account deleted.");
+                                }
+                            }
+                        });
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
 
     }

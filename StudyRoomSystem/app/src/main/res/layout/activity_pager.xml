@@ -6,12 +6,23 @@
     tools:context=".PagerActivity"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PNU 스터디룸"
+            android:id="@+id/tvregister"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/font"
+            android:textSize="20sp"
+            />
+    </RelativeLayout>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"

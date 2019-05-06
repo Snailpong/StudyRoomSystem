@@ -21,13 +21,10 @@ public class PagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pager);
 
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         tabLayout = (TabLayout)findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("tab1"));
-        tabLayout.addTab(tabLayout.newTab().setText("tab2"));
-        tabLayout.addTab(tabLayout.newTab().setText("tab3"));
+        tabLayout.addTab(tabLayout.newTab().setText("예약하기"));
+        tabLayout.addTab(tabLayout.newTab().setText("예약현황"));
+        tabLayout.addTab(tabLayout.newTab().setText("계정관리"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         viewPager = (ViewPager)findViewById(R.id.viewPager);

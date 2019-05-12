@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8120cb3-3e48-4b76-b9cf-5de0f08aa230" name="Default Changelist" comment="" />
+    <list default="true" id="d8120cb3-3e48-4b76-b9cf-5de0f08aa230" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/StudyRoomSystem/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudyRoomSystem/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/StudyRoomSystem/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudyRoomSystem/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/StudyRoomSystem/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudyRoomSystem/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/StudyRoomSystem/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudyRoomSystem/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/StudyRoomSystem/local.properties" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +33,15 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1304255621">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,9 +54,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
+    <option name="x" value="950" />
     <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -52,12 +67,7 @@
         <subPane>
           <expand>
             <path>
-              <item name="renew" type="b2602c69:ProjectViewProjectNode" />
-              <item name="renew" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="renew" type="b2602c69:ProjectViewProjectNode" />
-              <item name="renew" type="462c0819:PsiDirectoryNode" />
+              <item name="StudyRoomSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="StudyRoomSystem" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -99,10 +109,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32980832" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32936803" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />

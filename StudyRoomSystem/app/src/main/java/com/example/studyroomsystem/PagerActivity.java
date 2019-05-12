@@ -2,10 +2,15 @@
 package com.example.studyroomsystem;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 // 강제 종료 에러 발생
@@ -13,43 +18,45 @@ public class PagerActivity extends AppCompatActivity {
     private long pressedTime = 0;
     private Toast toast;
 
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
+
+    private FragmentManager fragmentManager = getSupportFragmentManager();
+    private BuildingFragment menu1Fragment = new BuildingFragment();
+    private RatioFragment menu2Fragment = new RatioFragment();
+    private ProfileFragment menu3Fragment = new ProfileFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pager);
 
-        tabLayout = (TabLayout)findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("예약하기"));
-        tabLayout.addTab(tabLayout.newTab().setText("예약현황"));
-        tabLayout.addTab(tabLayout.newTab().setText("계정관리"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.frame_layout, menu1Fragment).commitAllowingStateLoss();
 
-        viewPager = (ViewPager)findViewById(R.id.viewPager);
-
-        TabPagerAdapter pagerAdapter = new TabPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(pagerAdapter);
-
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        // bottomNavigationView의 아이템이 선택될 때 호출될 리스너 등록
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                switch (item.getItemId()) {
+                    case R.id.action_schedule_add: {
+                        transaction.replace(R.id.frame_layout, menu1Fragment).commitAllowingStateLoss();
+                        break;
+                    }
+                    case R.id.action_schedule_check: {
+                        transaction.replace(R.id.frame_layout, menu2Fragment).commitAllowingStateLoss();
+                        break;
+                    }
+                    case R.id.action_setting: {
+                        transaction.replace(R.id.frame_layout, menu3Fragment).commitAllowingStateLoss();
+                        break;
+                    }
+                }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
+                return true;
             }
         });
+
     }
 
     public void showExit() {

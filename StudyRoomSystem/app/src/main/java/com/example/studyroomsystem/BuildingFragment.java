@@ -24,7 +24,7 @@ public class BuildingFragment extends Fragment {
     private RecyclerView.Adapter mRecycleAdapter;
     private RecyclerView.LayoutManager mRecycleLayoutManager;
     private RecyclerView mRecyclerView;
-    private ArrayList<CardData> mDataset;
+    private ArrayList<BuildingCardData> mDataset;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,14 +37,14 @@ public class BuildingFragment extends Fragment {
         mRecyclerView.setLayoutManager(mRecycleLayoutManager);
 
         mDataset = new ArrayList<>();
-        mRecycleAdapter = new RecyclerAdapter(mDataset);
+        mRecycleAdapter = new BuildingRecyclerAdapter(mDataset);
         mRecyclerView.setAdapter(mRecycleAdapter);
 
-        mDataset.add(new CardData("#1", R.drawable.a));
-        mDataset.add(new CardData("#2", R.drawable.b));
-        mDataset.add(new CardData("#3", R.drawable.c));
-        mDataset.add(new CardData("#4", R.drawable.d));
-        mDataset.add(new CardData("#5", R.drawable.e));
+        mDataset.add(new BuildingCardData("#1", R.drawable.a));
+        mDataset.add(new BuildingCardData("#2", R.drawable.b));
+        mDataset.add(new BuildingCardData("#3", R.drawable.c));
+        mDataset.add(new BuildingCardData("#4", R.drawable.d));
+        mDataset.add(new BuildingCardData("#5", R.drawable.e));
 
         mRecyclerView.setAdapter(mRecycleAdapter);
 

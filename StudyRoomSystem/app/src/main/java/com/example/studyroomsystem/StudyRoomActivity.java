@@ -100,7 +100,7 @@ public class StudyRoomActivity extends AppCompatActivity {
         BuildingPosition = in.getIntExtra("BuildingPosition",0);
 
         // 이미지 시작위치 구하기
-        for(int studyRoomCounter = 0; studyRoomCounter < StudyRoomCount[BuildingPosition]; studyRoomCounter++){
+        for(int studyRoomCounter = 0; studyRoomCounter < BuildingPosition; studyRoomCounter++){
             StartPosition += StudyRoomCount[BuildingPosition];
         }
         // 카드뷰 추가
@@ -109,5 +109,6 @@ public class StudyRoomActivity extends AppCompatActivity {
         }
 
         mRecyclerView.setAdapter(mRecycleAdapter);
+        StartPosition = 0;
     }
 }

@@ -12,6 +12,7 @@
         <activity android:name=".Profile" />
         <activity android:name=".Register" />
         <activity android:name=".RegisterActivity" />
+        <activity android:name=".ReservationActivity" />
         <activity android:name=".PagerActivity" />
         <activity android:name=".ModifyPI" />
         <activity android:name=".ResetPWD" />

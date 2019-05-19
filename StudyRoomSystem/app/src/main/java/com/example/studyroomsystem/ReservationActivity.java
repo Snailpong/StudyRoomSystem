@@ -80,6 +80,7 @@ int current;
             @Override
             public void onClick(View view){
                 Hashtable<String, Object> profile = new Hashtable<String, Object>();
+                profile.put("capacity", capacity);
                 profile.put("current", current+1);
                 myRef.updateChildren(profile);
                 Toast.makeText(ReservationActivity.this, "예약 완료", Toast.LENGTH_SHORT).show();

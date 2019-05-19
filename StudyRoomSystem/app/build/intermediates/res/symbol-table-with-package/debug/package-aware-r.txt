@@ -1122,6 +1122,7 @@ id action_setting
 id action_text
 id actions
 id activity_chooser_view_content
+id activity_sub
 id add
 id adjust_height
 id adjust_width
@@ -1140,12 +1141,17 @@ id btnModifycancel
 id btnSendEmail
 id btn_alarm_message
 id btn_getout
+id btn_insert
 id btn_logout
+id btn_select
+id btn_update
 id btn_user_reservation
 id btncheck_auth
 id btnfinalmodify
 id btnfinalregister
 id btnrecheck
+id btnreservation
+id buildingname
 id buttonPanel
 id cancel_action
 id cardview
@@ -1153,6 +1159,11 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id check_age
+id check_man
+id check_name
+id check_userid
+id check_woman
 id checkbox
 id chronometer
 id clip_horizontal
@@ -1165,6 +1176,7 @@ id coordinator
 id custom
 id customPanel
 id dark
+id db_list_view
 id decor_content_parent
 id default_activity_button
 id design_bottom_sheet
@@ -1175,6 +1187,9 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id edit_age
+id edit_id
+id edit_name
 id edit_query
 id end
 id end_padder
@@ -1223,6 +1238,7 @@ id largeLabel
 id left
 id light
 id line1
+id line2
 id line3
 id listMode
 id list_item
@@ -1270,6 +1286,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scroll_view
 id scrollable
 id search_badge
 id search_bar
@@ -1303,6 +1320,7 @@ id standard
 id start
 id status_bar_latest_event_content
 id stretch
+id studyroomname
 id submenuarrow
 id submit_area
 id tabMode
@@ -1317,7 +1335,12 @@ id textSpacerNoTitle
 id textStart
 id textViewUserName
 id textViewUserSchoolid
+id text_age
+id text_gender
+id text_id
 id text_input_password_toggle
+id text_name
+id text_sort
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -1339,6 +1362,7 @@ id tvHello
 id tvRegister
 id tvalert
 id tvauth_number
+id tvbuilding
 id tvemail_alert
 id tvemail_link
 id tvmodifyPI
@@ -1352,6 +1376,7 @@ id tvregister
 id tvrepassword
 id tvschoolnum
 id tvschoolnumber
+id tvstudyroom
 id uniform
 id unlabeled
 id up
@@ -1418,7 +1443,10 @@ layout activity_pager
 layout activity_personal_info
 layout activity_profile
 layout activity_register
+layout activity_reservation
 layout activity_reset_pwd
+layout activity_studyroom
+layout activity_test_reference_building
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

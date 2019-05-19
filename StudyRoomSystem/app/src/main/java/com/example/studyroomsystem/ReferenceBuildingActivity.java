@@ -46,10 +46,10 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
     CheckBox check_Name;
     CheckBox check_Age;
 
-    String ID;
-    String name;
-    long age;
-    String gender = "";
+    String building;
+    String classNumber;
+    long capacity;
+    long current;
     String sort = "id";
 
     ArrayAdapter<String> arrayAdapter;
@@ -120,10 +120,10 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
             edit_Age.setText(tempData[2].trim());
             if(tempData[3].trim().equals("Man")){
                 check_Man.setChecked(true);
-                gender = "Man";
+                current = 0;
             }else{
                 check_Woman.setChecked(true);
-                gender = "Woman";
+                current = 0;
             }
             edit_ID.setEnabled(false);
             btn_Insert.setEnabled(false);
@@ -136,7 +136,7 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
         public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
             Log.d("Long Click", "position = " + position);
             final String[] nowData = arrayData.get(position).split("\\s+");
-            ID = nowData[0];
+            building = nowData[0];
             String viewData = nowData[0] + ", " + nowData[1] + ", " + nowData[2] + ", " + nowData[3];
             AlertDialog.Builder dialog = new AlertDialog.Builder(ReferenceBuildingActivity.this);
             dialog.setTitle("데이터 삭제")
@@ -166,7 +166,7 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
     };
 
     public boolean IsExistID(){
-        boolean IsExist = arrayIndex.contains(ID);
+        boolean IsExist = arrayIndex.contains(building);
         return IsExist;
     }
 
@@ -175,10 +175,10 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
         Map<String, Object> childUpdates = new HashMap<>();
         Map<String, Object> postValues = null;
         if(add){
-            FirebasePost post = new FirebasePost(ID, name, age, gender);
+            FirebasePost post = new FirebasePost(building, classNumber, capacity, current);
             postValues = post.toMap();
         }
-        childUpdates.put("/id_list/" + ID, postValues);
+        childUpdates.put("/id_list/" + building, postValues);
         mPostReference.updateChildren(childUpdates);
     }
 
@@ -192,7 +192,7 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     String key = postSnapshot.getKey();
                     FirebasePost get = postSnapshot.getValue(FirebasePost.class);
-                    String[] info = {get.id, get.name, String.valueOf(get.age), get.gender};
+                    String[] info = {get.building, get.classNumber, String.valueOf(get.capacity), String.valueOf(get.current)};
                     String Result = setTextLength(info[0],10) + setTextLength(info[1],10) + setTextLength(info[2],10) + setTextLength(info[3],10);
                     arrayData.add(Result);
                     arrayIndex.add(key);
@@ -227,9 +227,9 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_insert:
-                ID = edit_ID.getText().toString();
-                name = edit_Name.getText().toString();
-                age = Long.parseLong(edit_Age.getText().toString());
+                building = edit_ID.getText().toString();
+                classNumber = edit_Name.getText().toString();
+                capacity = Long.parseLong(edit_Age.getText().toString());
                 if(!IsExistID()){
                     postFirebaseDatabase(true);
                     getFirebaseDatabase();
@@ -242,9 +242,9 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
                 break;
 
             case R.id.btn_update:
-                ID = edit_ID.getText().toString();
-                name = edit_Name.getText().toString();
-                age = Long.parseLong(edit_Age.getText().toString());
+                building = edit_ID.getText().toString();
+                classNumber = edit_Name.getText().toString();
+                capacity = Long.parseLong(edit_Age.getText().toString());
                 postFirebaseDatabase(true);
                 getFirebaseDatabase();
                 setInsertMode();
@@ -259,12 +259,12 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
 
             case R.id.check_man:
                 check_Woman.setChecked(false);
-                gender = "Man";
+                current = 0;
                 break;
 
             case R.id.check_woman:
                 check_Man.setChecked(false);
-                gender = "Woman";
+                current = 0;
                 break;
 
             case R.id.check_userid:
@@ -282,7 +282,7 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
             case R.id.check_age:
                 check_ID.setChecked(false);
                 check_Name.setChecked(false);
-                sort = "age";
+                sort = "capacity";
                 break;
         }
     }

@@ -56,14 +56,14 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
         holder.imageCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), position + "Select", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(v.getContext(), position + "Select", Toast.LENGTH_SHORT).show();
 
                 // 인텐트 : 선택시 해당 학습공간 액티비티로 이동
-//                Context context = v.getContext();
-//                Intent in = new Intent(context, StudyRoomActivity.class);
-//                in.putExtra("BuildingPosition",position);
-//
-//                context.startActivity(in);
+                Context context = v.getContext();
+                Intent in = new Intent(context, ReservationActivity.class);
+                in.putExtra("StudyRoomPosition",position);
+
+                context.startActivity(in);
             }
         });
     }

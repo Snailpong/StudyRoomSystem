@@ -34,15 +34,35 @@ public class StudyRoomActivity extends AppCompatActivity {
     };
     static String[] BuildingName = new String[]{
             // building1
-            "컴공관",
+            "제도관 1",
+            "제도관 2",
+            "제도관 3",
+            "제도관 4",
+            "제도관 5",
             // building2
-            "기계관",
+            "기계관 1",
+            "기계관 2",
+            "기계관 3",
+            "기계관 4",
+            "기계관 5",
             // building3
-            "항공관",
+            "항공관 1",
+            "항공관 2",
+            "항공관 3",
+            "항공관 4",
+            "항공관 5",
             // building4
-            "재료관",
+            "재료관 1",
+            "재료관 2",
+            "재료관 3",
+            "재료관 4",
+            "재료관 5",
             // building5
-            "건설관"
+            "건설관 1",
+            "건설관 2",
+            "건설관 3",
+            "건설관 4",
+            "건설관 5"
     };
     static int[] StudyRoomImgset = new int[]{
             // building1
@@ -105,7 +125,7 @@ public class StudyRoomActivity extends AppCompatActivity {
         }
         // 카드뷰 추가
         for(int studyRoomCounter = 0; studyRoomCounter < StudyRoomCount[BuildingPosition]; studyRoomCounter++){
-            mDataset.add(new StudyRoomCardData(BuildingName[BuildingPosition], StudyRoomImgset[StartPosition + studyRoomCounter]));
+            mDataset.add(new StudyRoomCardData(BuildingName[StartPosition + studyRoomCounter], StudyRoomImgset[StartPosition + studyRoomCounter]));
         }
 
         mRecyclerView.setAdapter(mRecycleAdapter);

@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 
@@ -29,6 +32,8 @@ public class BuildingRecyclerAdapter extends RecyclerView.Adapter<BuildingRecycl
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageCard;
         public TextView textCard;
+
+
 
         public ViewHolder(View v) {
             super(v);

@@ -1122,6 +1122,7 @@ id action_setting
 id action_text
 id actions
 id activity_chooser_view_content
+id activity_sub
 id add
 id adjust_height
 id adjust_width
@@ -1146,6 +1147,8 @@ id btncheck_auth
 id btnfinalmodify
 id btnfinalregister
 id btnrecheck
+id btnreservation
+id buildingname
 id buttonPanel
 id cancel_action
 id cardview
@@ -1303,6 +1306,7 @@ id standard
 id start
 id status_bar_latest_event_content
 id stretch
+id studyroomname
 id submenuarrow
 id submit_area
 id tabMode
@@ -1339,6 +1343,7 @@ id tvHello
 id tvRegister
 id tvalert
 id tvauth_number
+id tvbuilding
 id tvemail_alert
 id tvemail_link
 id tvmodifyPI
@@ -1352,6 +1357,7 @@ id tvregister
 id tvrepassword
 id tvschoolnum
 id tvschoolnumber
+id tvstudyroom
 id uniform
 id unlabeled
 id up
@@ -1418,7 +1424,9 @@ layout activity_pager
 layout activity_personal_info
 layout activity_profile
 layout activity_register
+layout activity_reservation
 layout activity_reset_pwd
+layout activity_studyroom
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

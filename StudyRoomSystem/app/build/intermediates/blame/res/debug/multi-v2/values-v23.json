@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "D:\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Surface_Snailpong\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\680eeed6b79b1380cc1c1eebeb9eff53\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\min\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\a9e433b7a41472b3673144244ba35e20\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Surface_Snailpong\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\9e4f61998adf83ca23e6681d6f9c893d\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\min\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\5c4efbf1e63d9cb6b7c0a58f49ce547d\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

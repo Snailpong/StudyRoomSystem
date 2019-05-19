@@ -33,18 +33,17 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
     Button btn_Update;
     Button btn_Insert;
     Button btn_Select;
-    EditText edit_ID;
-    EditText edit_Name;
-    EditText edit_Age;
-    TextView text_ID;
-    TextView text_Name;
-    TextView text_Age;
-    TextView text_Gender;
-    CheckBox check_Man;
-    CheckBox check_Woman;
-    CheckBox check_ID;
-    CheckBox check_Name;
-    CheckBox check_Age;
+    EditText edit_Building;
+    EditText edit_ClassName;
+    EditText edit_Capacity;
+    TextView text_Building;
+    TextView text_ClassNumber;
+    TextView text_Capacity;
+    TextView text_Current;
+
+    CheckBox check_Buiilding;
+    CheckBox check_ClassNumber;
+    CheckBox check_Capacity;
 
     String building;
     String classNumber;
@@ -67,23 +66,20 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
         btn_Update.setOnClickListener(this);
         btn_Select = (Button) findViewById(R.id.btn_select);
         btn_Select.setOnClickListener(this);
-        edit_ID = (EditText) findViewById(R.id.edit_id);
-        edit_Name = (EditText) findViewById(R.id.edit_name);
-        edit_Age = (EditText) findViewById(R.id.edit_age);
-        text_ID = (TextView) findViewById(R.id.text_id);
-        text_Name = (TextView) findViewById(R.id.text_name);
-        text_Age = (TextView) findViewById(R.id.text_age);
-        text_Gender= (TextView) findViewById(R.id.text_gender);
-        check_Man = (CheckBox) findViewById(R.id.check_man);
-        check_Man.setOnClickListener(this);
-        check_Woman = (CheckBox) findViewById(R.id.check_woman);
-        check_Woman.setOnClickListener(this);
-        check_ID = (CheckBox) findViewById(R.id.check_userid);
-        check_ID.setOnClickListener(this);
-        check_Name = (CheckBox) findViewById(R.id.check_name);
-        check_Name.setOnClickListener(this);
-        check_Age = (CheckBox) findViewById(R.id.check_age);
-        check_Age.setOnClickListener(this);
+        edit_Building = (EditText) findViewById(R.id.edit_building);
+        edit_ClassName = (EditText) findViewById(R.id.edit_classNumber);
+        edit_Capacity = (EditText) findViewById(R.id.edit_capacity);
+        text_Building = (TextView) findViewById(R.id.text_building);
+        text_ClassNumber = (TextView) findViewById(R.id.text_classNumber);
+        text_Capacity = (TextView) findViewById(R.id.text_capacity);
+        text_Current = (TextView) findViewById(R.id.text_current);
+
+        check_Buiilding = (CheckBox) findViewById(R.id.check_building);
+        check_Buiilding.setOnClickListener(this);
+        check_ClassNumber = (CheckBox) findViewById(R.id.check_classNumber);
+        check_ClassNumber.setOnClickListener(this);
+        check_Capacity = (CheckBox) findViewById(R.id.check_capacity);
+        check_Capacity.setOnClickListener(this);
 
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
         ListView listView = (ListView) findViewById(R.id.db_list_view);
@@ -91,7 +87,7 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
         listView.setOnItemClickListener(onClickListener);
         listView.setOnItemLongClickListener(longClickListener);
 
-        check_ID.setChecked(true);
+        check_Buiilding.setChecked(true);
         getFirebaseDatabase();
 
         btn_Insert.setEnabled(true);
@@ -99,11 +95,9 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
     }
 
     public void setInsertMode(){
-        edit_ID.setText("");
-        edit_Name.setText("");
-        edit_Age.setText("");
-        check_Man.setChecked(false);
-        check_Woman.setChecked(false);
+        edit_Building.setText("");
+        edit_ClassName.setText("");
+        edit_Capacity.setText("");
         btn_Insert.setEnabled(true);
         btn_Update.setEnabled(false);
     }
@@ -115,17 +109,11 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
             Log.e("On Click", "Data: " + arrayData.get(position));
             String[] tempData = arrayData.get(position).split("\\s+");
             Log.e("On Click", "Split Result = " + tempData);
-            edit_ID.setText(tempData[0].trim());
-            edit_Name.setText(tempData[1].trim());
-            edit_Age.setText(tempData[2].trim());
-            if(tempData[3].trim().equals("Man")){
-                check_Man.setChecked(true);
-                current = 0;
-            }else{
-                check_Woman.setChecked(true);
-                current = 0;
-            }
-            edit_ID.setEnabled(false);
+            edit_Building.setText(tempData[0].trim());
+            edit_ClassName.setText(tempData[1].trim());
+            edit_Capacity.setText(tempData[2].trim());
+
+            edit_Building.setEnabled(false);
             btn_Insert.setEnabled(false);
             btn_Update.setEnabled(true);
         }
@@ -147,7 +135,7 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
                             postFirebaseDatabase(false);
                             getFirebaseDatabase();
                             setInsertMode();
-                            edit_ID.setEnabled(true);
+                            edit_Building.setEnabled(true);
                             Toast.makeText(ReferenceBuildingActivity.this, "데이터를 삭제했습니다.", Toast.LENGTH_SHORT).show();
                         }
                     })
@@ -156,7 +144,7 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(ReferenceBuildingActivity.this, "삭제를 취소했습니다.", Toast.LENGTH_SHORT).show();
                             setInsertMode();
-                            edit_ID.setEnabled(true);
+                            edit_Building.setEnabled(true);
                         }
                     })
                     .create()
@@ -227,9 +215,9 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_insert:
-                building = edit_ID.getText().toString();
-                classNumber = edit_Name.getText().toString();
-                capacity = Long.parseLong(edit_Age.getText().toString());
+                building = edit_Building.getText().toString();
+                classNumber = edit_ClassName.getText().toString();
+                capacity = Long.parseLong(edit_Capacity.getText().toString());
                 if(!IsExistID()){
                     postFirebaseDatabase(true);
                     getFirebaseDatabase();
@@ -237,51 +225,41 @@ public class ReferenceBuildingActivity extends AppCompatActivity implements View
                 }else{
                     Toast.makeText(ReferenceBuildingActivity.this, "이미 존재하는 ID 입니다. 다른 ID로 설정해주세요.", Toast.LENGTH_LONG).show();
                 }
-                edit_ID.requestFocus();
-                edit_ID.setCursorVisible(true);
+                edit_Building.requestFocus();
+                edit_Building.setCursorVisible(true);
                 break;
 
             case R.id.btn_update:
-                building = edit_ID.getText().toString();
-                classNumber = edit_Name.getText().toString();
-                capacity = Long.parseLong(edit_Age.getText().toString());
+                building = edit_Building.getText().toString();
+                classNumber = edit_ClassName.getText().toString();
+                capacity = Long.parseLong(edit_Capacity.getText().toString());
                 postFirebaseDatabase(true);
                 getFirebaseDatabase();
                 setInsertMode();
-                edit_ID.setEnabled(true);
-                edit_ID.requestFocus();
-                edit_ID.setCursorVisible(true);
+                edit_Building.setEnabled(true);
+                edit_Building.requestFocus();
+                edit_Building.setCursorVisible(true);
                 break;
 
             case R.id.btn_select:
                 getFirebaseDatabase();
                 break;
 
-            case R.id.check_man:
-                check_Woman.setChecked(false);
-                current = 0;
-                break;
-
-            case R.id.check_woman:
-                check_Man.setChecked(false);
-                current = 0;
-                break;
-
-            case R.id.check_userid:
-                check_Name.setChecked(false);
-                check_Age.setChecked(false);
+            case R.id.check_building:
+                check_ClassNumber.setChecked(false);
+                check_Capacity.setChecked(false);
                 sort = "id";
                 break;
 
-            case R.id.check_name:
-                check_ID.setChecked(false);
-                check_Age.setChecked(false);
+            case R.id.check_classNumber:
+                check_Buiilding.setChecked(false);
+                check_Capacity.setChecked(false);
                 sort = "name";
                 break;
 
-            case R.id.check_age:
-                check_ID.setChecked(false);
-                check_Name.setChecked(false);
+            case R.id.check_capacity:
+                check_Buiilding.setChecked(false);
+                check_ClassNumber.setChecked(false);
                 sort = "capacity";
                 break;
         }

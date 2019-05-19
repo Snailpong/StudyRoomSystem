@@ -34,21 +34,7 @@ int current;
         RoomName = in.getStringExtra("RoomName");
         NameArray = RoomName.split("#");
         String SelectBuildingName;
-        if (NameArray[0]=="제도관") {
-            SelectBuildingName = "Jedo";
-        }
-        if (NameArray[0]=="기계관") {
-            SelectBuildingName = "Gigye";
-        }
-        if (NameArray[0]=="항공관") {
-            SelectBuildingName = "Hangong";
-        }
-        if (NameArray[0]=="재료관") {
-            SelectBuildingName = "Jaeryo";
-        }
-        if (NameArray[0]=="건설관") {
-            SelectBuildingName = "Gunsul";
-        }
+
         TextView BuildingName = findViewById(R.id.buildingname);
         BuildingName.setText(NameArray[0]);
 

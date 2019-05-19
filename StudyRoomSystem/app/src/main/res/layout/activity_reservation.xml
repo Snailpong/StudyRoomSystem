@@ -49,15 +49,16 @@
                 android:textColor="#000000"
                 android:textSize="12sp"
                 />
-            <EditText
+            <TextView
                 android:layout_width="300dp"
                 android:layout_height="50dp"
-                android:id="@+id/etbuilding"
+                android:text="  건물 이름  "
+                android:id="@+id/buildingname"
                 android:layout_below="@+id/tvbuilding"
-                android:inputType="number"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/real_ettext_bubble"
+                android:gravity="center_vertical"
                 android:paddingLeft="10sp"
                 android:textSize="12sp"
                 />
@@ -68,18 +69,20 @@
                 android:id="@+id/tvstudyroom"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
-                android:layout_below="@+id/etbuilding"
+                android:layout_below="@+id/buildingname"
                 android:textColor="#000000"
                 android:textSize="12sp"
                 />
-            <EditText
+            <TextView
                 android:layout_width="300dp"
                 android:layout_height="50dp"
-                android:id="@+id/etstudyroom"
+                android:text="  강의실 이름  "
+                android:id="@+id/studyroomname"
                 android:layout_below="@+id/tvstudyroom"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/real_ettext_bubble"
+                android:gravity="center_vertical"
                 android:paddingLeft="10sp"
                 android:textSize="12sp"
                 />
@@ -92,7 +95,7 @@
                 android:textColor="#ffffff"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:layout_below="@+id/etstudyroom"
+                android:layout_below="@+id/studyroomname"
                 />
         </RelativeLayout>
 

@@ -40,11 +40,11 @@ public class BuildingFragment extends Fragment {
         mRecycleAdapter = new BuildingRecyclerAdapter(mDataset);
         mRecyclerView.setAdapter(mRecycleAdapter);
 
-        mDataset.add(new BuildingCardData("#1", R.drawable.a));
-        mDataset.add(new BuildingCardData("#2", R.drawable.b));
-        mDataset.add(new BuildingCardData("#3", R.drawable.c));
-        mDataset.add(new BuildingCardData("#4", R.drawable.d));
-        mDataset.add(new BuildingCardData("#5", R.drawable.e));
+        mDataset.add(new BuildingCardData("제도관", R.drawable.jedo));
+        mDataset.add(new BuildingCardData("기계관", R.drawable.gigye));
+        mDataset.add(new BuildingCardData("항공관", R.drawable.hanggong));
+        mDataset.add(new BuildingCardData("재료관", R.drawable.jaeryo));
+        mDataset.add(new BuildingCardData("건설관", R.drawable.gunsul));
 
         mRecyclerView.setAdapter(mRecycleAdapter);
 

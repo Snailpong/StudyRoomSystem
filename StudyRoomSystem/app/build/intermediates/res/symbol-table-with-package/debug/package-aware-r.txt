@@ -1058,8 +1058,11 @@ drawable design_snackbar_background
 drawable down_ettext_bubble
 drawable e
 drawable ettext_bubble
+drawable gigye
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable gunsul
+drawable hanggong
 drawable ic_event_available_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1068,6 +1071,8 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_settings_black_24dp
+drawable jaeryo
+drawable jedo
 drawable layout_bubble
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator

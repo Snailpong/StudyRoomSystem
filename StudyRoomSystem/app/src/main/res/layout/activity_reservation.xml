@@ -86,6 +86,31 @@
                 android:paddingLeft="10sp"
                 android:textSize="12sp"
                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  예약인원  "
+                android:id="@+id/tvhowmany"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/studyroomname"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:text="  인원수  "
+                android:id="@+id/howmanycheck"
+                android:layout_below="@+id/tvhowmany"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/real_ettext_bubble"
+                android:gravity="center_vertical"
+                android:paddingLeft="10sp"
+                android:textSize="12sp"
+                />
             <Button
                 android:text = "예약하기"
                 android:layout_width="310dp"
@@ -95,7 +120,7 @@
                 android:textColor="#ffffff"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:layout_below="@+id/studyroomname"
+                android:layout_below="@+id/howmanycheck"
                 />
         </RelativeLayout>
 

@@ -65,11 +65,16 @@ int current;
         btnReservation.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Hashtable<String, Object> profile = new Hashtable<String, Object>();
-                profile.put("capacity", capacity);
-                profile.put("current", current+1);
-                myRef.updateChildren(profile);
-                Toast.makeText(ReservationActivity.this, "예약 완료", Toast.LENGTH_SHORT).show();
+                if (capacity > current) {
+                    Hashtable<String, Object> profile = new Hashtable<String, Object>();
+                    profile.put("capacity", capacity);
+                    profile.put("current", current+1);
+                    myRef.updateChildren(profile);
+                    Toast.makeText(ReservationActivity.this, "예약 완료", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(ReservationActivity.this, "정원 초과", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

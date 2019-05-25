@@ -31,6 +31,7 @@ class StudyRoomCardData {
 
 public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecyclerAdapter.ViewHolder> {
     private ArrayList<StudyRoomCardData> mDataset;
+    int curr, capa;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageCard;
@@ -61,13 +62,16 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
         String[] NameArray = text.split("#");
         holder.textCard.setText(text);
 
+
         DatabaseReference myRef;
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("building").child(NameArray[0]).child("Class"+NameArray[1]);
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                int count = dataSnapshot.child("capacity").getValue(Integer.class) - dataSnapshot.child("current").getValue(Integer.class);
+                capa = dataSnapshot.child("capacity").getValue(Integer.class);
+                curr = dataSnapshot.child("current").getValue(Integer.class);
+                int count =  capa - curr;
                 holder.textCard.setText(text + "                          예약 가능한 자리수 " + String.valueOf(count));
             }
 
@@ -79,14 +83,12 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
         holder.imageCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(v.getContext(), position + "Select", Toast.LENGTH_SHORT).show();
-
-                // 인텐트 : 선택시 해당 학습공간 액티비티로 이동
                 Context context = v.getContext();
                 Intent in = new Intent(context, ReservationActivity.class);
                 in.putExtra("RoomName", mDataset.get(position).text);
 
                 context.startActivity(in);
+
             }
         });
     }

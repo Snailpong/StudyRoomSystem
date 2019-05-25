@@ -53,7 +53,7 @@ int current;
                     if (item.getKey().equals("current"))
                         current = item.getValue(Integer.class);
                 }
-                Toast.makeText(ReservationActivity.this, "capacity: " + capacity + " current: " + current, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ReservationActivity.this, "capacity: " + capacity + " current: " + current, Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onCancelled(DatabaseError error) {

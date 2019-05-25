@@ -1144,13 +1144,13 @@ id beginning
 id blocking
 id bottom
 id bottom_navigation_view
+id btnAway
 id btnModify
 id btnModifycancel
 id btnSendEmail
 id btn_alarm_message
 id btn_getout
 id btn_logout
-id btn_user_reservation
 id btncheck_auth
 id btnfinalmodify
 id btnfinalregister
@@ -1324,6 +1324,7 @@ id tag_unhandled_key_listeners
 id text
 id text2
 id textCard
+id textCurrentLec
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart

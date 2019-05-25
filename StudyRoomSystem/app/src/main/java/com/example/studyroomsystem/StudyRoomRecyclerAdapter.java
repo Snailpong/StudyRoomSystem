@@ -1,5 +1,6 @@
 package com.example.studyroomsystem;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -88,6 +89,7 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
                 in.putExtra("RoomName", mDataset.get(position).text);
 
                 context.startActivity(in);
+                ((Activity)context).finish();
 
             }
         });

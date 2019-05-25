@@ -92,6 +92,7 @@
                 android:layout_width="310dp"
                 android:layout_height="40dp"
                 android:textSize="15dp"
+                android:background="@drawable/button_bubble"
                 android:id="@+id/btnreservation"
                 android:textColor="#ffffff"
                 android:layout_centerHorizontal="true"

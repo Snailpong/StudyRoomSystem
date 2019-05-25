@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,13 +24,18 @@ public class ReservationActivity extends AppCompatActivity {
 
     public static String RoomName;
     public static String[] NameArray;
-int capacity;
-int current;
+    int capacity;
+    int current;
     DatabaseReference myRef;
+    FirebaseAuth mAuth;
+    FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
 
         Intent in = getIntent();
         RoomName = in.getStringExtra("RoomName");
@@ -41,7 +48,7 @@ int current;
         TextView StudyRoomName = findViewById(R.id.studyroomname);
         StudyRoomName.setText(NameArray[1]);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("building").child(NameArray[0]).child("Class" + NameArray[1]); // 건물명, 강의실명
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -70,7 +77,11 @@ int current;
                     profile.put("capacity", capacity);
                     profile.put("current", current+1);
                     myRef.updateChildren(profile);
+
+                    FirebaseDatabase.getInstance().getReference("users").child(user.getUid()).child("reservation").setValue(RoomName);
+
                     Toast.makeText(ReservationActivity.this, "예약 완료", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
                 else {
                     Toast.makeText(ReservationActivity.this, "정원 초과", Toast.LENGTH_SHORT).show();

@@ -713,17 +713,17 @@ public final class R {
         public static final int tag_unhandled_key_listeners = 0x7f0a00db;
         public static final int text = 0x7f0a00dc;
         public static final int text2 = 0x7f0a00dd;
-        public static final int textSpacerNoButtons = 0x7f0a00df;
-        public static final int textSpacerNoTitle = 0x7f0a00e0;
-        public static final int time = 0x7f0a00e8;
-        public static final int title = 0x7f0a00e9;
-        public static final int titleDividerNoCustom = 0x7f0a00ea;
-        public static final int title_template = 0x7f0a00eb;
-        public static final int top = 0x7f0a00ec;
-        public static final int topPanel = 0x7f0a00ed;
-        public static final int uniform = 0x7f0a0109;
-        public static final int up = 0x7f0a010b;
-        public static final int wrap_content = 0x7f0a0112;
+        public static final int textSpacerNoButtons = 0x7f0a00e0;
+        public static final int textSpacerNoTitle = 0x7f0a00e1;
+        public static final int time = 0x7f0a00e9;
+        public static final int title = 0x7f0a00ea;
+        public static final int titleDividerNoCustom = 0x7f0a00eb;
+        public static final int title_template = 0x7f0a00ec;
+        public static final int top = 0x7f0a00ed;
+        public static final int topPanel = 0x7f0a00ee;
+        public static final int uniform = 0x7f0a010a;
+        public static final int up = 0x7f0a010c;
+        public static final int wrap_content = 0x7f0a0113;
     }
     public static final class integer {
         private integer() {}

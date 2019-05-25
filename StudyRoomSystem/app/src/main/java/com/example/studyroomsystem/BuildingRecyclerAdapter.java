@@ -10,8 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -54,9 +57,28 @@ public class BuildingRecyclerAdapter extends RecyclerView.Adapter<BuildingRecycl
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.imageCard.setImageResource(mDataset.get(position).img);
-        holder.textCard.setText(mDataset.get(position).text);
+        final String text = mDataset.get(position).text;
+        holder.textCard.setText(text);
+
+        DatabaseReference myRef;
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("building").child(text);
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int count = 0;
+                for(DataSnapshot item : dataSnapshot.getChildren()) {
+                    if(item.child("capacity").getValue(Integer.class) != item.child("current").getValue(Integer.class))
+                        count++;
+                }
+                holder.textCard.setText(text + "                                       예약 가능한 강의실 " + String.valueOf(count));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        });
 
         holder.imageCard.setOnClickListener(new View.OnClickListener() {
             @Override

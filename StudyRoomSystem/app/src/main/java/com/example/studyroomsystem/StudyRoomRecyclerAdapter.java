@@ -10,6 +10,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 
@@ -49,9 +55,26 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.imageCard.setImageResource(mDataset.get(position).img);
-        holder.textCard.setText(mDataset.get(position).text);
+        final String text = mDataset.get(position).text;
+        String[] NameArray = text.split("#");
+        holder.textCard.setText(text);
+
+        DatabaseReference myRef;
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("building").child(NameArray[0]).child("Class"+NameArray[1]);
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int count = dataSnapshot.child("capacity").getValue(Integer.class) - dataSnapshot.child("current").getValue(Integer.class);
+                holder.textCard.setText(text + "                          예약 가능한 자리수 " + String.valueOf(count));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        });
+
 
         holder.imageCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +84,7 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
                 // 인텐트 : 선택시 해당 학습공간 액티비티로 이동
                 Context context = v.getContext();
                 Intent in = new Intent(context, ReservationActivity.class);
-                in.putExtra("RoomName",mDataset.get(position).text);
+                in.putExtra("RoomName", mDataset.get(position).text);
 
                 context.startActivity(in);
             }

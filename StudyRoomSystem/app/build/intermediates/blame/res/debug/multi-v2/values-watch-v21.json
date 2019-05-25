@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
+            "outputFile": "C:\\Users\\Surface_Snailpong\\StudyRoomSystem\\StudyRoomSystem\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\min\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\5c4efbf1e63d9cb6b7c0a58f49ce547d\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\Surface_Snailpong\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\9e4f61998adf83ca23e6681d6f9c893d\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

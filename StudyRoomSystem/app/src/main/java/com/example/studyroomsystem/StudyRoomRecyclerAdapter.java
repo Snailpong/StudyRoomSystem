@@ -50,7 +50,7 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        //holder.imageCard.setImageResource(mDataset.get(position).img);
+        holder.imageCard.setImageResource(mDataset.get(position).img);
         holder.textCard.setText(mDataset.get(position).text);
 
         holder.imageCard.setOnClickListener(new View.OnClickListener() {

@@ -66,39 +66,39 @@ public class StudyRoomActivity extends AppCompatActivity {
     };
     static int[] StudyRoomImgset = new int[]{
             // building1
-            R.drawable.a,
-            R.drawable.b,
-            R.drawable.c,
-            R.drawable.d,
-            R.drawable.e,
+            R.drawable.l1,
+            R.drawable.l1,
+            R.drawable.l3,
+            R.drawable.l3,
+            R.drawable.l2,
 
             // building2
-            R.drawable.b,
-            R.drawable.c,
-            R.drawable.d,
-            R.drawable.e,
-            R.drawable.a,
+            R.drawable.l3,
+            R.drawable.l2,
+            R.drawable.l1,
+            R.drawable.l1,
+            R.drawable.l1,
 
             // building3
-            R.drawable.c,
-            R.drawable.d,
-            R.drawable.e,
-            R.drawable.a,
-            R.drawable.b,
+            R.drawable.l2,
+            R.drawable.l2,
+            R.drawable.l2,
+            R.drawable.l1,
+            R.drawable.l1,
 
             // building4
-            R.drawable.d,
-            R.drawable.e,
-            R.drawable.a,
-            R.drawable.b,
-            R.drawable.c,
+            R.drawable.l3,
+            R.drawable.l3,
+            R.drawable.l3,
+            R.drawable.l3,
+            R.drawable.l1,
 
             // building5
-            R.drawable.e,
-            R.drawable.a,
-            R.drawable.b,
-            R.drawable.c,
-            R.drawable.d,
+            R.drawable.l1,
+            R.drawable.l1,
+            R.drawable.l2,
+            R.drawable.l3,
+            R.drawable.l3,
     };
 
     @Override

@@ -1073,6 +1073,9 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_settings_black_24dp
 drawable jaeryo
 drawable jedo
+drawable l1
+drawable l2
+drawable l3
 drawable layout_bubble
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator

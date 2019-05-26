@@ -23,7 +23,7 @@
             <TextView
                 android:layout_width="288dp"
                 android:layout_height="wrap_content"
-                android:text="현재 예약 강의실 : -"
+                android:text="현재 예약중인 강의실이 없습니다."
                 android:id="@+id/textCurrentLec"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"

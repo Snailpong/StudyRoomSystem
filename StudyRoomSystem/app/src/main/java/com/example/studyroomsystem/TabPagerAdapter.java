@@ -21,7 +21,7 @@ public class TabPagerAdapter extends FragmentStatePagerAdapter {
                 BuildingFragment tabFragment0 = new BuildingFragment();
                 return tabFragment0;
             case 1:
-                RatioFragment tabFragment1 = new RatioFragment();
+                MyReservationFragment tabFragment1 = new MyReservationFragment();
                 return tabFragment1;
             case 2:
                 ProfileFragment tabFragment2 = new ProfileFragment();

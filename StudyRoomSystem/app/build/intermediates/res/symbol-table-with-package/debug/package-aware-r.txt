@@ -1193,10 +1193,10 @@ id enterAlways
 id enterAlwaysCollapsed
 id etEmail
 id etauth_number
-id etmodify_name
+id etcheck_name
+id etcheck_schoolid
 id etmodify_password
 id etmodify_repassword
-id etmodify_schoolnum
 id etregist_name
 id etregist_password
 id etregist_repassword
@@ -1273,6 +1273,7 @@ id resetPwdButton
 id right
 id right_icon
 id right_side
+id rlcheckPI
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1353,13 +1354,13 @@ id tvRegister
 id tvalert
 id tvauth_number
 id tvbuilding
+id tvcheckname
+id tvcheckschoolid
 id tvemail_alert
 id tvemail_link
 id tvmodifyPI
-id tvmodifyname
 id tvmodifypassword
 id tvmodifyrepassword
-id tvmodifyschoolnum
 id tvname
 id tvpassword
 id tvregister
@@ -1451,8 +1452,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_building
+layout fragment_my_reservation
 layout fragment_profile
-layout fragment_ratio
 layout item_cardview
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include

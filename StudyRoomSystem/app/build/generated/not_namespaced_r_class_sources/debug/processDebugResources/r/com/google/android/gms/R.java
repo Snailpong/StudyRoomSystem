@@ -72,11 +72,11 @@ public final class R {
         public static final int none = 0x7f0a0093;
         public static final int normal = 0x7f0a0094;
         public static final int radio = 0x7f0a00a5;
-        public static final int standard = 0x7f0a00d1;
-        public static final int text = 0x7f0a00dc;
-        public static final int text2 = 0x7f0a00dd;
-        public static final int wide = 0x7f0a0110;
-        public static final int wrap_content = 0x7f0a0113;
+        public static final int standard = 0x7f0a00d2;
+        public static final int text = 0x7f0a00dd;
+        public static final int text2 = 0x7f0a00de;
+        public static final int wide = 0x7f0a0111;
+        public static final int wrap_content = 0x7f0a0114;
     }
     public static final class integer {
         private integer() {}

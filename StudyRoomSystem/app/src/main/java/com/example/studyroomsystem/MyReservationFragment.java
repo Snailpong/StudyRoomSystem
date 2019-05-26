@@ -38,7 +38,7 @@ public class MyReservationFragment extends Fragment {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child("reservation").getValue(String.class) == null) {
+                if(dataSnapshot.child("reservation").getValue(String.class)==null) {
                     text.setText("현재 예약중인 강의실이 없습니다.");
                 } else {
                     lec = dataSnapshot.child("reservation").getValue(String.class);
@@ -55,7 +55,7 @@ public class MyReservationFragment extends Fragment {
             public void onClick(View v) {
                 final String[] nameArray = lec.split("#");
                 FirebaseDatabase.getInstance().getReference("users").child(user.getUid()).
-                        child("reservation").setValue("");
+                        child("reservation").setValue(null);
                 away.setVisibility(View.GONE);
 
                 myRef = FirebaseDatabase.getInstance().getReference("building").

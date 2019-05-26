@@ -65,7 +65,7 @@ public class BuildingRecyclerAdapter extends RecyclerView.Adapter<BuildingRecycl
         DatabaseReference myRef;
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("building").child(text);
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int count = 0;

@@ -1,7 +1,6 @@
 package com.example.studyroomsystem;
 
 import android.support.v4.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -21,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 // 서비스2 : 건물별 전체 예약률 제공
-public class RatioFragment extends Fragment {
+public class MyReservationFragment extends Fragment {
     private FirebaseAuth mAuth;
     FirebaseUser user;
     String lec;
@@ -30,7 +28,7 @@ public class RatioFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_ratio, container, false);
+        View view =  inflater.inflate(R.layout.fragment_my_reservation, container, false);
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         final Button away = (Button)view.findViewById(R.id.btnAway);
@@ -60,13 +58,13 @@ public class RatioFragment extends Fragment {
                         child("reservation").setValue(null);
                 away.setVisibility(View.GONE);
                 myRef = FirebaseDatabase.getInstance().getReference("building").
-                        child(nameArray[0]).child("Class" + nameArray[1]).child("capacity"); // 건물명, 강의실명
+                        child(nameArray[0]).child("Class" + nameArray[1]).child("current"); // 건물명, 강의실명
                 myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         FirebaseDatabase.getInstance().getReference("building").
-                                child(nameArray[0]).child("Class" + nameArray[1]).child("capacity")
-                                .setValue(dataSnapshot.getValue(Integer.class)+1);
+                                child(nameArray[0]).child("Class" + nameArray[1]).child("current")
+                                .setValue(dataSnapshot.getValue(Integer.class)-1);
                     }
                     @Override
                     public void onCancelled(DatabaseError error) {

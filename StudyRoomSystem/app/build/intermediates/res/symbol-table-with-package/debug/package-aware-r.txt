@@ -1193,8 +1193,6 @@ id enterAlways
 id enterAlwaysCollapsed
 id etEmail
 id etauth_number
-id etcheck_name
-id etcheck_schoolid
 id etmodify_password
 id etmodify_repassword
 id etregist_name
@@ -1273,7 +1271,6 @@ id resetPwdButton
 id right
 id right_icon
 id right_side
-id rlcheckPI
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1354,8 +1351,6 @@ id tvRegister
 id tvalert
 id tvauth_number
 id tvbuilding
-id tvcheckname
-id tvcheckschoolid
 id tvemail_alert
 id tvemail_link
 id tvmodifyPI

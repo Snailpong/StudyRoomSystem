@@ -33,7 +33,7 @@ public class ModifyPI extends AppCompatActivity {
         final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         final DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("users").child(userId);
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        /*myRef.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -49,14 +49,14 @@ public class ModifyPI extends AppCompatActivity {
             public void onCancelled(DatabaseError error) {
                 throw error.toException();
             }
-        });
+        });*/
 
         Button btnModifyPI = (Button) findViewById(R.id.btnfinalmodify);
         btnModifyPI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText etCheckName = (EditText) findViewById(R.id.etcheck_name);
-                EditText etCheckSchoolId = (EditText) findViewById(R.id.etcheck_schoolid);
+               // EditText etCheckName = (EditText) findViewById(R.id.etcheck_name);
+                //EditText etCheckSchoolId = (EditText) findViewById(R.id.etcheck_schoolid);
                 EditText etModifyPasswd = (EditText) findViewById(R.id.etmodify_password);
                 EditText etModifyRepasswd = (EditText) findViewById(R.id.etmodify_repassword);
 
@@ -69,14 +69,14 @@ public class ModifyPI extends AppCompatActivity {
 //                        profile.put("schoolid",etModifySchoolnum.getText().toString());
 //                    }
 //                    mDatabase.updateChildren(profile);
-
+/*
                     if (!etCheckSchoolId.getText().toString().equals(schoolid)) {
                         Toast.makeText(ModifyPI.this, "학번이 틀립니다. 다시 확인해 주세요", Toast.LENGTH_SHORT).show();
                     }
                     else if (!etCheckName.getText().toString().equals(name)) {
                         Toast.makeText(ModifyPI.this, "이름이 틀립니다. 다시 확인해 주세요.", Toast.LENGTH_SHORT).show();
-                    }
-                    else if (etModifyPasswd.getText().toString().isEmpty()) {
+                    }*/
+                    if (etModifyPasswd.getText().toString().isEmpty()) {
                         Toast.makeText(ModifyPI.this, "비밀번호를 입력해 주세요.", Toast.LENGTH_SHORT).show();
                     }
                     else {

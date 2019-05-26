@@ -5,7 +5,7 @@ public class UserModel {
     public String email;
     public String key;
     public String name;
-    public String photo;
+    public String reservation;
     public String pushToken;
     public String schoolid;
 
@@ -22,12 +22,12 @@ public class UserModel {
         this.email = email;
     }
 
-    public String getPhoto() {
-        return photo;
+    public String getReservation() {
+        return reservation;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setReservation(String reservation) {
+        this.reservation = reservation;
     }
 
     public String getKey() {

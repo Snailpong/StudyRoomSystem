@@ -32,6 +32,7 @@ public class Personal_Info extends AppCompatActivity {
 
     String name;
     String schoolid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

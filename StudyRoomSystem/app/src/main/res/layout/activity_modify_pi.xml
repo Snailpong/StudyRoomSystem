@@ -31,9 +31,10 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="65dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/rlcheckPI"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:paddingTop="30dp"
@@ -43,8 +44,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="학번을 입력해 주세요."
-                    android:id="@+id/tvmodifyschoolnum"
+                    android:text="학번을 확인합니다."
+                    android:id="@+id/tvcheckschoolid"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="30dp"
                     android:textColor="#000000"
@@ -54,8 +55,8 @@
                     android:layout_width="300dp"
                     android:layout_height="50dp"
                     android:hint="  학번"
-                    android:id="@+id/etmodify_schoolnum"
-                    android:layout_below="@+id/tvmodifyschoolnum"
+                    android:id="@+id/etcheck_schoolid"
+                    android:layout_below="@+id/tvcheckschoolid"
                     android:inputType="number"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
@@ -66,11 +67,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="이름을 입력해 주세요."
-                    android:id="@+id/tvmodifyname"
+                    android:text="이름을 확인합니다."
+                    android:id="@+id/tvcheckname"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="30dp"
-                    android:layout_below="@+id/etmodify_schoolnum"
+                    android:layout_below="@+id/etcheck_schoolid"
                     android:textColor="#000000"
                     android:textSize="12sp"
                     />
@@ -78,29 +79,41 @@
                     android:layout_width="300dp"
                     android:layout_height="50dp"
                     android:hint="  이름"
-                    android:id="@+id/etmodify_name"
-                    android:layout_below="@+id/tvmodifyname"
+                    android:id="@+id/etcheck_name"
+                    android:layout_below="@+id/tvcheckname"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/real_ettext_bubble"
                     android:paddingLeft="10sp"
                     android:textSize="12sp"
                     />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="50dp"
+                android:background="@drawable/layout_bubble"
+                android:layout_below="@+id/rlcheckPI"
+                android:layout_centerHorizontal="true">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="비밀번호를 입력해 주세요."
+                    android:text="새 비밀번호를 입력해 주세요."
                     android:id="@+id/tvmodifypassword"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="30dp"
                     android:textColor="#000000"
                     android:textSize="12sp"
-                    android:layout_below="@+id/etmodify_name"
                     />
                 <EditText
                     android:layout_width="300dp"
                     android:layout_height="50dp"
-                    android:hint="  비밀번호"
+                    android:hint="  새 비밀번호"
                     android:id="@+id/etmodify_password"
                     android:layout_below="@+id/tvmodifypassword"
                     android:inputType="textPassword"
@@ -113,7 +126,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="비밀번호를 다시 입력해 주세요."
+                    android:text="새 비밀번호를 다시 입력해 주세요."
                     android:id="@+id/tvmodifyrepassword"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="30dp"
@@ -124,7 +137,7 @@
                 <EditText
                     android:layout_width="300dp"
                     android:layout_height="50dp"
-                    android:hint="  비밀번호 재입력"
+                    android:hint="  새 비밀번호 재입력"
                     android:id="@+id/etmodify_repassword"
                     android:layout_below="@+id/tvmodifyrepassword"
                     android:inputType="textPassword"

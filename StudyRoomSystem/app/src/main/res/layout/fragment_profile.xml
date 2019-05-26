@@ -41,7 +41,7 @@
                 android:layout_below="@+id/textViewUserName"
                 />
             <Button
-                android:text = "회원 정보 수정"
+                android:text = "비밀번호 수정"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:textSize="15dp"

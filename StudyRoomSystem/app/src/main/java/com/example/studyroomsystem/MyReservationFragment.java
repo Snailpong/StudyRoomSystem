@@ -55,8 +55,9 @@ public class MyReservationFragment extends Fragment {
             public void onClick(View v) {
                 final String[] nameArray = lec.split("#");
                 FirebaseDatabase.getInstance().getReference("users").child(user.getUid()).
-                        child("reservation").setValue(null);
+                        child("reservation").setValue("");
                 away.setVisibility(View.GONE);
+
                 myRef = FirebaseDatabase.getInstance().getReference("building").
                         child(nameArray[0]).child("Class" + nameArray[1]).child("current"); // 건물명, 강의실명
                 myRef.addListenerForSingleValueEvent(new ValueEventListener() {

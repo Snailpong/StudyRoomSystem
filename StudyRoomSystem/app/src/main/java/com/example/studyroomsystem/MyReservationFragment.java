@@ -31,18 +31,21 @@ public class MyReservationFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_my_reservation, container, false);
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
+
         final Button away = (Button)view.findViewById(R.id.btnAway);
         away.setVisibility(View.GONE);
+
         final TextView text = view.findViewById(R.id.textCurrentLec);
         databaseReference = FirebaseDatabase.getInstance().getReference("users").child(user.getUid());
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child("reservation").getValue(String.class)==null) {
-                    text.setText("현재 예약중인 강의실이 없습니다.");
-                } else {
+                if(dataSnapshot.child("reservation").getValue(String.class) == null) {
+                    text.setText("현재 예약한 강의실이 없습니다.");
+                }
+                else {
                     lec = dataSnapshot.child("reservation").getValue(String.class);
-                    text.setText("현재 예약 강의실 : " + lec);
+                    text.setText("예약한 강의실 : " + lec);
                     away.setVisibility(View.VISIBLE);
                 }
             }
@@ -50,6 +53,7 @@ public class MyReservationFragment extends Fragment {
             @Override
             public void onCancelled(DatabaseError databaseError) {}
         });
+
         away.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,6 +35,7 @@ class StudyRoomCardData {
 public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecyclerAdapter.ViewHolder> {
     private ArrayList<StudyRoomCardData> mDataset;
     int curr, capa;
+    private FirebaseAuth firebaseAuth;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageCard;
@@ -84,13 +87,33 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
         holder.imageCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Context context = v.getContext();
-                Intent in = new Intent(context, ReservationActivity.class);
+                firebaseAuth = FirebaseAuth.getInstance();
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                String userId = user.getUid();
+                DatabaseReference myRef;
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                myRef = database.getReference("users").child(userId);
+
+                final Context context = v.getContext();
+                final Intent in = new Intent(context, ReservationActivity.class);
                 in.putExtra("RoomName", mDataset.get(position).text);
 
-                context.startActivity(in);
-                ((Activity)context).finish();
+                myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.child("reservation").getValue(String.class) == null) {
+                            context.startActivity(in);
+                            ((Activity)context).finish();
+                        }
+                        else {
+                            Toast.makeText(context, "예약이 이미 존재합니다.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
 
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {}
+                });
             }
         });
     }

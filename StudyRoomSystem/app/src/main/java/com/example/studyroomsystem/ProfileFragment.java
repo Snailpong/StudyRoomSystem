@@ -39,6 +39,7 @@ public class ProfileFragment extends Fragment{
 
     String name;
     String schoolid;
+    String authority;
 
     @Nullable
     @Override
@@ -48,7 +49,6 @@ public class ProfileFragment extends Fragment{
         final FirebaseUser user = firebaseAuth.getCurrentUser();
         final String userId = user.getUid();
         final DatabaseReference myRef;
-        DataSnapshot dataSnapshot;
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("users").child(userId);
@@ -68,6 +68,7 @@ public class ProfileFragment extends Fragment{
                 }
                 textViewUserName.setText("이름: "+name);
                 textViewUserSchoolid.setText("학번: "+schoolid);
+                authority = dataSnapshot.child("authority").getValue(String.class);
             }
             @Override
             public void onCancelled(DatabaseError error) {
@@ -87,26 +88,16 @@ public class ProfileFragment extends Fragment{
         btnManagerReservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        final Context context = v.getContext();
 
-                        if(dataSnapshot.child("authority").getValue(String.class) == "manager") {
-                            Intent in = new Intent(context, ManagerReservationActivity.class);
-
-                            context.startActivity(in);
-                        }
-                        else {
-                            Toast.makeText(context, "권한이 부족합니다.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {}
-                });
+                if (authority.equals("manager")) {
+                    Intent in = new Intent(getActivity(), ManagerReservationActivity.class);
+                    startActivity(in);
+                } else {
+                    Toast.makeText(getActivity(), "권한이 부족합니다.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
         Button btnLogout = (Button) view.findViewById(R.id.btn_logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override

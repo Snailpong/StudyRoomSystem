@@ -20,6 +20,7 @@
         <activity android:name=".Personal_Info" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".StudyRoomActivity" />
+        <activity android:name=".ManagerReservationActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

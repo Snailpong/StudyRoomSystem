@@ -1148,9 +1148,9 @@ id btnAway
 id btnModify
 id btnModifycancel
 id btnSendEmail
-id btn_alarm_message
 id btn_getout
 id btn_logout
+id btn_manager_reservation
 id btncheck_auth
 id btnfinalmodify
 id btnfinalregister
@@ -1195,6 +1195,7 @@ id etEmail
 id etauth_number
 id etmodify_password
 id etmodify_repassword
+id etreason
 id etregist_name
 id etregist_password
 id etregist_repassword
@@ -1358,6 +1359,7 @@ id tvmodifypassword
 id tvmodifyrepassword
 id tvname
 id tvpassword
+id tvreason
 id tvregister
 id tvrepassword
 id tvschoolnum
@@ -1424,6 +1426,7 @@ layout abc_tooltip
 layout activity_email_link
 layout activity_login
 layout activity_main
+layout activity_manager_reservation
 layout activity_modify_pi
 layout activity_pager
 layout activity_personal_info

@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 
 class StudyRoomCardData {
@@ -66,17 +67,36 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
         String[] NameArray = text.split("#");
         holder.textCard.setText(text);
 
+        Calendar c = Calendar.getInstance();
+        final String cyear = String.valueOf(c.get(Calendar.YEAR));
+        final String cmonth = String.valueOf(c.get(Calendar.MONTH) + 1);
+        final String cday = String.valueOf(c.get(Calendar.DAY_OF_MONTH));
+
 
         DatabaseReference myRef;
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("building").child(NameArray[0]).child("Class"+NameArray[1]);
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                capa = dataSnapshot.child("capacity").getValue(Integer.class);
-                curr = dataSnapshot.child("current").getValue(Integer.class);
-                int count =  capa - curr;
-                holder.textCard.setText(text + "                          예약 가능한 자리수 " + String.valueOf(count));
+                String dates = dataSnapshot.child("noday").getValue(String.class);
+                String date[] = new String[5];
+                if(dates != null) {
+                    date = dates.split(" ");
+                    if(date[0].equals(cyear) && date[1].equals(cmonth) && date[2].equals(cday)) {
+                        holder.textCard.setText(text + "                         예약할 수 없는 날입니다.");
+                    } else {
+                        capa = dataSnapshot.child("capacity").getValue(Integer.class);
+                        curr = dataSnapshot.child("current").getValue(Integer.class);
+                        int count =  capa - curr;
+                        holder.textCard.setText(text + "                          예약 가능한 자리수 " + String.valueOf(count));
+                    }
+                } else {
+                    capa = dataSnapshot.child("capacity").getValue(Integer.class);
+                    curr = dataSnapshot.child("current").getValue(Integer.class);
+                    int count =  capa - curr;
+                    holder.textCard.setText(text + "                          예약 가능한 자리수 " + String.valueOf(count));
+                }
             }
 
             @Override
@@ -103,8 +123,13 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if(dataSnapshot.child("reservation").getValue(String.class) == null) {
-                            context.startActivity(in);
-                            ((Activity)context).finish();
+                            if(holder.textCard.getText().toString().contains("예약할 수 없는 날입니다.")) {
+                                Toast.makeText(context, "다른 강의실을 선택해주세요.", Toast.LENGTH_LONG);
+                            } else {
+                                context.startActivity(in);
+                                ((Activity)context).finish();
+                            }
+
                         }
                         else {
                             Toast.makeText(context, "예약이 이미 존재합니다.", Toast.LENGTH_SHORT).show();

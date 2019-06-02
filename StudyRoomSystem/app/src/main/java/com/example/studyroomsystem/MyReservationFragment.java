@@ -43,6 +43,9 @@ public class MyReservationFragment extends Fragment {
                 if(dataSnapshot.child("reservation").getValue(String.class) == null) {
                     text.setText("현재 예약한 강의실이 없습니다.");
                 }
+                else if(dataSnapshot.child("reservation").getValue(String.class).equals("예약 취소")) {
+                    text.setText("예약이 취소되었습니다. 사유:" + dataSnapshot.child("reservationwhy"));
+                }
                 else {
                     lec = dataSnapshot.child("reservation").getValue(String.class);
                     text.setText("예약한 강의실 : " + lec);

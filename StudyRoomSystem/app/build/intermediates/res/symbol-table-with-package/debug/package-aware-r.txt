@@ -1156,6 +1156,7 @@ id btnfinalmodify
 id btnfinalregister
 id btnrecheck
 id btnreservation
+id btnreservation3
 id buildingname
 id buttonPanel
 id cancel_action

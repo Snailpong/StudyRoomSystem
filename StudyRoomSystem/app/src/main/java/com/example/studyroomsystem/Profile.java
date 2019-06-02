@@ -117,6 +117,7 @@ public class Profile extends AppCompatActivity {
                             if(user != null) {
                                 Hashtable<String, String> profile = new Hashtable<String, String>();
                                 profile.put("email", user.getEmail());
+                                profile.put("authority", null);
                                 profile.put("reservation", null);
                                 profile.put("key",user.getUid());
                                 profile.put("schoolid",stschoolnumber);

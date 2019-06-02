@@ -1,5 +1,7 @@
 package com.example.studyroomsystem;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,6 +31,7 @@ import static android.content.Context.MODE_PRIVATE;
 // 서비스3 : 개인정보 확인, 수정, 회원가입 탈퇴
 public class ProfileFragment extends Fragment{
     private FirebaseAuth firebaseAuth;
+
     private static final String TAG = "MainActivity";
     private TextView textViewUserName;
     private TextView textViewUserSchoolid;
@@ -41,13 +45,14 @@ public class ProfileFragment extends Fragment{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = firebaseAuth.getCurrentUser();
-        String userId = user.getUid();
-        DatabaseReference myRef;
+        final FirebaseUser user = firebaseAuth.getCurrentUser();
+        final String userId = user.getUid();
+        final DatabaseReference myRef;
         DataSnapshot dataSnapshot;
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("users").child(userId);
+
         textViewUserName = (TextView) view.findViewById(R.id.textViewUserName);
         textViewUserSchoolid = (TextView) view.findViewById(R.id.textViewUserSchoolid);
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -75,6 +80,31 @@ public class ProfileFragment extends Fragment{
             public void onClick(View v) {
                 Intent in = new Intent(getActivity(), ModifyPI.class);
                 startActivity(in);
+            }
+        });
+
+        Button btnManagerReservation = (Button) view.findViewById(R.id.btn_manager_reservation);
+        btnManagerReservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        final Context context = v.getContext();
+
+                        if(dataSnapshot.child("authority").getValue(String.class) == "manager") {
+                            Intent in = new Intent(context, ManagerReservationActivity.class);
+
+                            context.startActivity(in);
+                        }
+                        else {
+                            Toast.makeText(context, "권한이 부족합니다.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {}
+                });
             }
         });
         Button btnLogout = (Button) view.findViewById(R.id.btn_logout);

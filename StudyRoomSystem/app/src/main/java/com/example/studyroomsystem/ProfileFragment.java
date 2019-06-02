@@ -89,7 +89,7 @@ public class ProfileFragment extends Fragment{
             @Override
             public void onClick(final View v) {
 
-                if (authority.equals("manager")) {
+                if (authority!=null && authority.equals("manager")) {
                     Intent in = new Intent(getActivity(), ManagerReservationActivity.class);
                     startActivity(in);
                 } else {

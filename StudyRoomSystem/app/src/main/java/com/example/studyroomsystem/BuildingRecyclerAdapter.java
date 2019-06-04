@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 
 class BuildingCardData {
@@ -31,6 +32,10 @@ class BuildingCardData {
 
 public class BuildingRecyclerAdapter extends RecyclerView.Adapter<BuildingRecyclerAdapter.ViewHolder> {
     private ArrayList<BuildingCardData> mDataset;
+    Calendar c = Calendar.getInstance();
+    int cyear = c.get(Calendar.YEAR);
+    int cmonth = c.get(Calendar.MONTH) + 1;
+    int cday = c.get(Calendar.DAY_OF_MONTH);
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageCard;
@@ -70,7 +75,7 @@ public class BuildingRecyclerAdapter extends RecyclerView.Adapter<BuildingRecycl
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int count = 0;
                 for(DataSnapshot item : dataSnapshot.getChildren()) {
-                    if(item.child("capacity").getValue(Integer.class) != item.child("current").getValue(Integer.class))
+                    if(item.child("capacity").getValue(Integer.class) != item.child("current").getValue(Integer.class) && !item.child("noday").getValue(String.class).equals(String.valueOf(cyear) + ' ' + String.valueOf(cmonth) + ' ' + String.valueOf(cday)))
                         count++;
                 }
                 holder.textCard.setText(text + "                                       예약 가능한 강의실 " + String.valueOf(count));

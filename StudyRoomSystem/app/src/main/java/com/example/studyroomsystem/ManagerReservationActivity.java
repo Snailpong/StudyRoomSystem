@@ -1,6 +1,7 @@
 package com.example.studyroomsystem;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,9 +22,11 @@ import java.util.Calendar;
 public class ManagerReservationActivity extends AppCompatActivity {
 
     int ayear, amonth, aday;
+    int byear, bmonth, bday;
     int cyear, cmonth, cday;
     EditText buid, clas, reas;
     FirebaseDatabase database;
+    DatePickerDialog.OnDateSetListener listener, listener2;
     Calendar c;
     Button b;
 
@@ -44,13 +47,32 @@ public class ManagerReservationActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
 
-        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+        listener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 //Toast.makeText(view.getContext(), String.valueOf(monthOfYear), Toast.LENGTH_SHORT).show();
                 ayear= year;
                 amonth = monthOfYear+1;
                 aday = dayOfMonth;
+                DatePickerDialog dialog = new DatePickerDialog(ManagerReservationActivity.this, listener2, 2019, 5, 2);
+                dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialogInterface) {
+                        finish();
+                    }
+                });
+                dialog.show();
+            }
+        };
+
+
+        listener2 = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                //Toast.makeText(view.getContext(), String.valueOf(monthOfYear), Toast.LENGTH_SHORT).show();
+                byear= year;
+                bmonth = monthOfYear+1;
+                bday = dayOfMonth;
             }
         };
 
@@ -61,10 +83,13 @@ public class ManagerReservationActivity extends AppCompatActivity {
                         .child("Class"+clas.getText().toString()).child("noday")
                         .setValue(String.valueOf(ayear) + ' ' + String.valueOf(amonth) + ' ' + String.valueOf(aday));
                 database.getReference("building").child(buid.getText().toString())
+                        .child("Class"+clas.getText().toString()).child("noday2")
+                        .setValue(String.valueOf(byear) + ' ' + String.valueOf(bmonth) + ' ' + String.valueOf(bday));
+                database.getReference("building").child(buid.getText().toString())
                         .child("Class"+clas.getText().toString()).child("nodaywhy")
                         .setValue(reas.getText().toString());
 
-                if(ayear == cyear && amonth == cmonth && aday == cday) {
+                if(ayear == cyear && amonth == cmonth && cday >= aday && cday <= bday) {
                     database.getReference("users").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -87,7 +112,14 @@ public class ManagerReservationActivity extends AppCompatActivity {
             }
         });
 
-        new DatePickerDialog(this, listener, 2019, 5, 2).show();
+        DatePickerDialog dialog = new DatePickerDialog(this, listener, 2019, 5, 2);
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialogInterface) {
+                finish();
+            }
+        });
+        dialog.show();
 
 
     }

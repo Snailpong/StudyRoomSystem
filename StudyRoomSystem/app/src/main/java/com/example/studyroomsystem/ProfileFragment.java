@@ -55,8 +55,32 @@ public class ProfileFragment extends Fragment{
 
         textViewUserName = (TextView) view.findViewById(R.id.textViewUserName);
         textViewUserSchoolid = (TextView) view.findViewById(R.id.textViewUserSchoolid);
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
 
+        Button btnModify = (Button) view.findViewById(R.id.btnModify);
+        btnModify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(getActivity(), ModifyPI.class);
+                startActivity(in);
+            }
+        });
+
+        final Button btnManagerReservation = (Button) view.findViewById(R.id.btn_manager_reservation);
+        btnManagerReservation.setVisibility(View.GONE);
+        btnManagerReservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+
+                if (authority!=null && authority.equals("manager")) {
+                    Intent in = new Intent(getActivity(), ManagerReservationActivity.class);
+                    startActivity(in);
+                } else {
+                    Toast.makeText(getActivity(), "권한이 부족합니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot item : dataSnapshot.getChildren()) {
@@ -69,32 +93,13 @@ public class ProfileFragment extends Fragment{
                 textViewUserName.setText("이름: "+name);
                 textViewUserSchoolid.setText("학번: "+schoolid);
                 authority = dataSnapshot.child("authority").getValue(String.class);
+                if (authority!=null && authority.equals("manager")) {
+                    btnManagerReservation.setVisibility(View.VISIBLE);
+                }
             }
             @Override
             public void onCancelled(DatabaseError error) {
                 throw error.toException();
-            }
-        });
-        Button btnModify = (Button) view.findViewById(R.id.btnModify);
-        btnModify.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in = new Intent(getActivity(), ModifyPI.class);
-                startActivity(in);
-            }
-        });
-
-        Button btnManagerReservation = (Button) view.findViewById(R.id.btn_manager_reservation);
-        btnManagerReservation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-
-                if (authority!=null && authority.equals("manager")) {
-                    Intent in = new Intent(getActivity(), ManagerReservationActivity.class);
-                    startActivity(in);
-                } else {
-                    Toast.makeText(getActivity(), "권한이 부족합니다.", Toast.LENGTH_SHORT).show();
-                }
             }
         });
 

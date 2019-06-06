@@ -41,9 +41,11 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageCard;
         public TextView textCard;
+        public View vv;
 
         public ViewHolder(View v) {
             super(v);
+            vv = v;
             imageCard = (ImageView) v.findViewById(R.id.imageCard);
             textCard = (TextView) v.findViewById(R.id.textCard);
         }
@@ -70,7 +72,7 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
         Calendar c = Calendar.getInstance();
         final String cyear = String.valueOf(c.get(Calendar.YEAR));
         final String cmonth = String.valueOf(c.get(Calendar.MONTH) + 1);
-        final String cday = String.valueOf(c.get(Calendar.DAY_OF_MONTH));
+        final int cday = c.get(Calendar.DAY_OF_MONTH);
 
 
         DatabaseReference myRef;
@@ -80,11 +82,15 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String dates = dataSnapshot.child("noday").getValue(String.class);
+                String dates2 = dataSnapshot.child("noday2").getValue(String.class);
                 String date[] = new String[5];
-                if(dates != null) {
+                String date2[] = new String[5];
+                if(!dates.equals("") && dates != null) {
                     date = dates.split(" ");
-                    if(date[0].equals(cyear) && date[1].equals(cmonth) && date[2].equals(cday)) {
-                        holder.textCard.setText(text + "                예약할 수 없는 날입니다.");
+                    date2 = dates2.split(" ");
+                    if(date[0].equals(cyear) && date[1].equals(cmonth) && Integer.parseInt(date[2])<=cday && Integer.parseInt(date2[2])>=cday) {
+                        //holder.vv.setVisibility(View.GONE);
+                        holder.textCard.setText(text + "                         예약할 수 없는 날입니다.");
                     } else {
                         capa = dataSnapshot.child("capacity").getValue(Integer.class);
                         curr = dataSnapshot.child("current").getValue(Integer.class);

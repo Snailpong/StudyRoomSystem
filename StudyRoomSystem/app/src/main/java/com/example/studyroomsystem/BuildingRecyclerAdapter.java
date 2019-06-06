@@ -75,7 +75,7 @@ public class BuildingRecyclerAdapter extends RecyclerView.Adapter<BuildingRecycl
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int count = 0;
                 for(DataSnapshot item : dataSnapshot.getChildren()) {
-                    if(item.child("capacity").getValue(Integer.class) != item.child("current").getValue(Integer.class) && !item.child("noday").getValue(String.class).equals(String.valueOf(cyear) + ' ' + String.valueOf(cmonth) + ' ' + String.valueOf(cday)))
+                    if(item.child("capacity").getValue(Integer.class) != item.child("current").getValue(Integer.class) && (item.child("noday").getValue(String.class) == null || !item.child("noday").getValue(String.class).equals(String.valueOf(cyear) + ' ' + String.valueOf(cmonth) + ' ' + String.valueOf(cday))))
                         count++;
                 }
                 holder.textCard.setText(text + "                                       예약 가능한 강의실 " + String.valueOf(count));

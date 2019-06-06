@@ -22,7 +22,7 @@ public class StudyRoomActivity extends AppCompatActivity {
 
     static int[] StudyRoomCount = new int[]{
             // building1
-            5,
+            12,
             // building2
             5,
             // building3
@@ -34,11 +34,18 @@ public class StudyRoomActivity extends AppCompatActivity {
     };
     static String[] BuildingName = new String[]{
             // building1
-            "제도관#1",
-            "제도관#2",
-            "제도관#3",
-            "제도관#4",
-            "제도관#5",
+            "제도관#6202",
+            "제도관#6203",
+            "제도관#6208",
+            "제도관#6210",
+            "제도관#6302-1",
+            "제도관#6303",
+            "제도관#6408(전산실1)",
+            "제도관#6409(전산실2)",
+            "제도관#6409-1(전산실3)",
+            "제도관#6514",
+            "제도관#6515",
+            "제도관#6516",
             // building2
             "기계관#1",
             "기계관#2",
@@ -71,6 +78,13 @@ public class StudyRoomActivity extends AppCompatActivity {
             R.drawable.l3,
             R.drawable.l3,
             R.drawable.l2,
+            R.drawable.l1,
+            R.drawable.l1,
+            R.drawable.l3,
+            R.drawable.l3,
+            R.drawable.l2,
+            R.drawable.l1,
+            R.drawable.l1,
 
             // building2
             R.drawable.l3,

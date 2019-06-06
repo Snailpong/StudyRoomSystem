@@ -90,18 +90,18 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
                     date2 = dates2.split(" ");
                     if(date[0].equals(cyear) && date[1].equals(cmonth) && Integer.parseInt(date[2])<=cday && Integer.parseInt(date2[2])>=cday) {
                         //holder.vv.setVisibility(View.GONE);
-                        holder.textCard.setText(text + "                         예약할 수 없는 날입니다.");
+                        holder.textCard.setText(text + "\n예약할 수 없는 날입니다.");
                     } else {
                         capa = dataSnapshot.child("capacity").getValue(Integer.class);
                         curr = dataSnapshot.child("current").getValue(Integer.class);
                         int count =  capa - curr;
-                        holder.textCard.setText(text + "                예약 가능한 자리수 " + String.valueOf(count));
+                        holder.textCard.setText(text + "\n예약 가능한 자리수 " + String.valueOf(count));
                     }
                 } else {
                     capa = dataSnapshot.child("capacity").getValue(Integer.class);
                     curr = dataSnapshot.child("current").getValue(Integer.class);
                     int count =  capa - curr;
-                    holder.textCard.setText(text + "                예약 가능한 자리수 " + String.valueOf(count));
+                    holder.textCard.setText(text + "\n예약 가능한 자리수 " + String.valueOf(count));
                 }
             }
 

@@ -80,6 +80,37 @@ public class ProfileFragment extends Fragment{
             }
         });
 
+        final Button btn_manager_view = (Button) view.findViewById(R.id.btn_manager_view);
+        btn_manager_view.setVisibility(View.GONE);
+        btn_manager_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(getActivity(), ManagerViewPage.class);
+                startActivity(in);
+            }
+        });
+
+        final Button btnGetOut = (Button) view.findViewById(R.id.btn_getout);
+        btnGetOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                user.delete()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+
+                                if (task.isSuccessful()) {
+                                    Log.d(TAG, "User account deleted.");
+                                }
+                            }
+                        });
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -95,6 +126,8 @@ public class ProfileFragment extends Fragment{
                 authority = dataSnapshot.child("authority").getValue(String.class);
                 if (authority!=null && authority.equals("manager")) {
                     btnManagerReservation.setVisibility(View.VISIBLE);
+                    btn_manager_view.setVisibility(View.VISIBLE);
+                    btnGetOut.setVisibility(View.GONE);
                 }
             }
             @Override
@@ -120,35 +153,9 @@ public class ProfileFragment extends Fragment{
         });
 
 
-        Button btnGetOut = (Button) view.findViewById(R.id.btn_getout);
-        btnGetOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                user.delete()
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
 
-                                if (task.isSuccessful()) {
-                                    Log.d(TAG, "User account deleted.");
-                                }
-                            }
-                        });
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
-            }
-        });
 
-        Button btn_manager_view = (Button) view.findViewById(R.id.btn_manager_view);
-        btn_manager_view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in = new Intent(getActivity(), ManagerViewPage.class);
-                startActivity(in);
-            }
-        });
 
         return view;
 

@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="50dp"
-                android:text="  건물  "
+                android:text=""
                 android:id="@+id/tvMVbuilding"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"

@@ -135,7 +135,7 @@ public class StudyRoomActivity extends AppCompatActivity {
 
         // 이미지 시작위치 구하기
         for(int studyRoomCounter = 0; studyRoomCounter < BuildingPosition; studyRoomCounter++){
-            StartPosition += StudyRoomCount[BuildingPosition - 1];
+            StartPosition += StudyRoomCount[studyRoomCounter];
         }
         // 카드뷰 추가
         for(int studyRoomCounter = 0; studyRoomCounter < StudyRoomCount[BuildingPosition]; studyRoomCounter++){

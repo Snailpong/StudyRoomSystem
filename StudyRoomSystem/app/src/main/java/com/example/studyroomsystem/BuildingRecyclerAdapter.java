@@ -35,7 +35,7 @@ public class BuildingRecyclerAdapter extends RecyclerView.Adapter<BuildingRecycl
     Calendar c = Calendar.getInstance();
     int cyear = c.get(Calendar.YEAR);
     int cmonth = c.get(Calendar.MONTH) + 1;
-    int cday = c.get(Calendar.DAY_OF_MONTH);
+    final int cday = c.get(Calendar.DAY_OF_MONTH);
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageCard;
@@ -48,6 +48,19 @@ public class BuildingRecyclerAdapter extends RecyclerView.Adapter<BuildingRecycl
             imageCard = (ImageView) v.findViewById(R.id.imageCard);
             textCard = (TextView) v.findViewById(R.id.textCard);
         }
+    }
+
+
+    public boolean CanReserve(String dates, String dates2) {
+        if (dates == null || dates.equals("")) return true;
+        String date[] = new String[5];
+        String date2[] = new String[5];
+        date = dates.split(" ");
+        date2 = dates2.split(" ");
+        if(Integer.parseInt(date[2])<=cday && Integer.parseInt(date2[2])>=cday) {
+            return false;
+        }
+        return true;
     }
 
     public BuildingRecyclerAdapter(ArrayList<BuildingCardData> dataset) {
@@ -75,7 +88,9 @@ public class BuildingRecyclerAdapter extends RecyclerView.Adapter<BuildingRecycl
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int count = 0;
                 for(DataSnapshot item : dataSnapshot.getChildren()) {
-                    if(item.child("capacity").getValue(Integer.class) != item.child("current").getValue(Integer.class) && (item.child("noday").getValue(String.class) == null || !item.child("noday").getValue(String.class).equals(String.valueOf(cyear) + ' ' + String.valueOf(cmonth) + ' ' + String.valueOf(cday))))
+                    String dates = item.child("noday").getValue(String.class);
+                    String dates2 = item.child("noday2").getValue(String.class);
+                    if(item.child("capacity").getValue(Integer.class) != item.child("current").getValue(Integer.class) && CanReserve(dates, dates2))
                         count++;
                 }
                 holder.textCard.setText(text + "                                       예약 가능한 강의실 " + String.valueOf(count));

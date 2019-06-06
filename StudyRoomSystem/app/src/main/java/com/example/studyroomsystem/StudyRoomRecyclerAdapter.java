@@ -95,13 +95,13 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
                         capa = dataSnapshot.child("capacity").getValue(Integer.class);
                         curr = dataSnapshot.child("current").getValue(Integer.class);
                         int count =  capa - curr;
-                        holder.textCard.setText(text + "                          예약 가능한 자리수 " + String.valueOf(count));
+                        holder.textCard.setText(text + "                예약 가능한 자리수 " + String.valueOf(count));
                     }
                 } else {
                     capa = dataSnapshot.child("capacity").getValue(Integer.class);
                     curr = dataSnapshot.child("current").getValue(Integer.class);
                     int count =  capa - curr;
-                    holder.textCard.setText(text + "                          예약 가능한 자리수 " + String.valueOf(count));
+                    holder.textCard.setText(text + "                예약 가능한 자리수 " + String.valueOf(count));
                 }
             }
 
@@ -129,7 +129,8 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if(dataSnapshot.child("reservation").getValue(String.class) == null) {
-                            if(holder.textCard.getText().toString().contains("예약할 수 없는 날입니다.")) {
+                            if(holder.textCard.getText().toString().contains("예약할 수 없는 날입니다.") ||
+                                    holder.textCard.getText().toString().contains("예약 가능한 자리수 0")) {
                                 Toast.makeText(context, "다른 강의실을 선택해주세요.", Toast.LENGTH_LONG);
                             } else {
                                 context.startActivity(in);

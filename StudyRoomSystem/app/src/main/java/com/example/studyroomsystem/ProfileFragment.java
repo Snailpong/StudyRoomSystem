@@ -141,6 +141,15 @@ public class ProfileFragment extends Fragment{
             }
         });
 
+        Button btn_manager_view = (Button) view.findViewById(R.id.btn_manager_view);
+        btn_manager_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(getActivity(), ManagerViewPage.class);
+                startActivity(in);
+            }
+        });
+
         return view;
 
     }

@@ -40,7 +40,7 @@ public class ManagerViewPage extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot item : dataSnapshot.getChildren()) {
                     String reserve =item.child("reservation").getValue(String.class);
-                    if(reserve != null) {
+                    if(reserve != null && !reserve.equals("예약 취소")) {
                         reserveUser += reserve + " ";
                         reserveUser += item.child("name").getValue(String.class) + "\n";
                     }

@@ -18,7 +18,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="  예약 현황 조회  "
+                android:text=" 사용자 예약 현황 조회  "
                 android:id="@+id/tvmanagerView"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="10dp"
@@ -29,7 +29,7 @@
                 />
         </RelativeLayout>
 
-        <RelativeLayout
+        <ScrollView
             android:layout_marginTop="80dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             android:layout_centerHorizontal="true">
             <TextView
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/tvMVbuilding"
                 android:layout_marginLeft="20dp"
@@ -50,7 +50,7 @@
                 android:textSize="12sp"
                 />
 
-        </RelativeLayout>
+        </ScrollView>
 
         <ProgressBar
             android:layout_width="50dp"

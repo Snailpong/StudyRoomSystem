@@ -83,6 +83,7 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String dates = dataSnapshot.child("noday").getValue(String.class);
                 String dates2 = dataSnapshot.child("noday2").getValue(String.class);
+                String why = dataSnapshot.child("nodaywhy").getValue(String.class);
                 String date[] = new String[5];
                 String date2[] = new String[5];
                 if(!dates.equals("") && dates != null) {
@@ -90,7 +91,7 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
                     date2 = dates2.split(" ");
                     if(date[0].equals(cyear) && date[1].equals(cmonth) && Integer.parseInt(date[2])<=cday && Integer.parseInt(date2[2])>=cday) {
                         //holder.vv.setVisibility(View.GONE);
-                        holder.textCard.setText(text + "\n예약할 수 없는 날입니다.");
+                        holder.textCard.setText(text + "\n예약할 수 없는 날입니다. 사유: "+why);
                     } else {
                         capa = dataSnapshot.child("capacity").getValue(Integer.class);
                         curr = dataSnapshot.child("current").getValue(Integer.class);

@@ -129,7 +129,8 @@ public class StudyRoomRecyclerAdapter extends RecyclerView.Adapter<StudyRoomRecy
                 myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.child("reservation").getValue(String.class) == null) {
+                        if(dataSnapshot.child("reservation").getValue(String.class) == null ||
+                                dataSnapshot.child("reservation").getValue(String.class).equals("예약 취소")) {
                             if(holder.textCard.getText().toString().contains("예약할 수 없는 날입니다.") ||
                                     holder.textCard.getText().toString().contains("예약 가능한 자리수 0")) {
                                 Toast.makeText(context, "다른 강의실을 선택해주세요.", Toast.LENGTH_LONG);

@@ -1,6 +1,7 @@
 package com.example.studyroomsystem;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -53,9 +54,17 @@ public class ManagerReservationActivity extends AppCompatActivity {
                 ayear= year;
                 amonth = monthOfYear+1;
                 aday = dayOfMonth;
-                new DatePickerDialog(ManagerReservationActivity.this, listener2, 2019, 5, 2).show();
+                DatePickerDialog dialog = new DatePickerDialog(ManagerReservationActivity.this, listener2, 2019, 5, 2);
+                dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialogInterface) {
+                        finish();
+                    }
+                });
+                dialog.show();
             }
         };
+
 
         listener2 = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -103,7 +112,14 @@ public class ManagerReservationActivity extends AppCompatActivity {
             }
         });
 
-        new DatePickerDialog(this, listener, 2019, 5, 2).show();
+        DatePickerDialog dialog = new DatePickerDialog(this, listener, 2019, 5, 2);
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialogInterface) {
+                finish();
+            }
+        });
+        dialog.show();
 
 
     }
